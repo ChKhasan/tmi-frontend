@@ -52,26 +52,27 @@ const discover = computed(() => {
     <CommonSectionWrapper
       :title="t('our_vision')"
       :description="t('our_vision_description')"
+      :info="t('about_us_info')"
       description-class="mb-7"
       class="col-span-2 lg:col-span-3 !pt-0 md:!pt-[56px]"
       exist-container
     >
       <template #default>
-        <div class="mb-10">
-          <img
-            src="/images/about/building.svg"
-            alt="Vision building"
-            class="aspect-[882/488] object-cover flex-shrink-0"
-          />
-        </div>
+<!--        <div class="mb-10">-->
+<!--          <img-->
+<!--            src="/images/about/building.svg"-->
+<!--            alt="Vision building"-->
+<!--            class="aspect-[882/488] object-cover flex-shrink-0"-->
+<!--          />-->
+<!--        </div>-->
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
-          <AboutCardDiscover
-            v-for="card in discover"
-            :key="card.id"
-            :card="card"
-          />
-        </div>
+<!--        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">-->
+<!--          <AboutCardDiscover-->
+<!--            v-for="card in discover"-->
+<!--            :key="card.id"-->
+<!--            :card="card"-->
+<!--          />-->
+<!--        </div>-->
       </template>
     </CommonSectionWrapper>
 

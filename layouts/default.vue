@@ -24,7 +24,7 @@ const changeColor = (v: boolean) => {
 
 watch(
   () => route.path,
-  (newValue) => {
+  (newValue: any) => {
     isTransparent.value = newValue === '/'
   },
   { immediate: true }

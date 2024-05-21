@@ -32,8 +32,8 @@ if (!menuList.value?.length) {
     <AboutSectionVision
       v-bind="{ menu: menuList, slug: menu?.slug, activeRoute: 'who-we-are' }"
     />
-    <AboutSectionTeam v-if="employees?.length" v-bind="{ employees }" />
-    <AboutSectionDocuments v-bind="{ documents: documents?.slice(0, 4) }" />
+    <AboutSectionTeam v-if="employees?.length" v-bind="{ employees, allMembers: true }" />
+<!--    <AboutSectionDocuments v-bind="{ documents: documents?.slice(0, 4) }" />-->
     <AboutSectionFacts v-bind="{ rankings: aboutRankings }" />
     <MainSectionCollapse class="!bg-[#FFFFFF29]" />
 <!--    <MainSectionDiscover />-->

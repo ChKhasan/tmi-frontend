@@ -64,7 +64,6 @@ useAsyncData(async () => {
     institutionStore.fetchMenu(),
     getBranchReviews(),
   ]).then((res) => {
-    console.log('res', res)
   })
 })
 

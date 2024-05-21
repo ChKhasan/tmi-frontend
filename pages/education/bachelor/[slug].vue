@@ -26,6 +26,9 @@ const changeComponent = (id: number) => {
 const { data, error } = useAsyncData(() =>
   useApi().$get(`education/DirectionDetail/${route.params?.slug as string}/`)
 )
+onMounted(() => {
+  console.log("data",data)
+})
 if (error.value) {
   showError(error.value)
 }

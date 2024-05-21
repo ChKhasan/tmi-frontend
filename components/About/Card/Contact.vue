@@ -19,7 +19,7 @@
 
     <div class="w-full relative z-2">
       <img
-        src="/images/about/person.svg"
+        src="/images/rector.png"
         alt="Person Image"
         class="w-full object-cover aspect-[300/306]"
       />

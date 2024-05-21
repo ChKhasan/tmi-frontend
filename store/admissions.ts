@@ -87,6 +87,7 @@ export const useAdmissionStore = defineStore('admissions', {
             params: { education_type__slug: slug },
           })
           .then((data: any) => {
+            console.log(data)
             this.directionList = data?.results
             resolve(data)
           })

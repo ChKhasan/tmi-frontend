@@ -11,7 +11,7 @@
       <div>
         <div>
           <div
-            v-if="data?.results?.length"
+            v-if="data?.results?.length && route.params.slug === 'our-story'"
             class="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             <AboutCardWhyChoose
@@ -20,7 +20,19 @@
               :data="item"
             />
           </div>
+          <div
+              v-if="data?.results?.length && route.params.slug === 'our-mission'"
+              class=""
 
+          >
+            <div class="w-full mb-6">
+
+              <img class="w-full"  v-if="data?.results[0]?.image" :src="data?.results[0]?.image" alt="">
+            </div>
+            <div v-html="data?.results[0]?.description">
+
+            </div>
+          </div>
           <CommonNoData v-else class="mt-14" />
         </div>
       </div>
@@ -69,7 +81,9 @@ switch (route.params.slug) {
 const { data } = useAsyncData(route.params.slug as string, () =>
   useApi().$get(`common/${slug.value}/`)
 )
-
+onMounted(() => {
+  console.log(data)
+})
 useSeoMeta({
   title: data.value?.title,
   description: data.value?.subtitle,

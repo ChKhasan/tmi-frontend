@@ -12,7 +12,7 @@
         </div>
 
         <div
-          class="md:col-span-9 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-5 md:gap-x-6 md:gap-y-10 -mt-5 md:mt-0"
+          class="md:col-span-9 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4 md:gap-x-4 md:gap-y-4 -mt-5 md:mt-0"
         >
           <TeamCardRanking
             v-for="(item, idx) in getData"

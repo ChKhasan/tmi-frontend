@@ -5,7 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useI18n } from 'vue-i18n'
 
 interface Props {
-  employees?: string
+  employees?: string,
+  allMembers?: boolean,
+  isDisabled?: boolean
 }
 
 defineProps<Props>()
@@ -48,17 +50,18 @@ const settings = computed(() => {
 
 <template>
   <section>
+
     <CommonSectionWrapper :title="t('our_team')">
       <template #after>
         <Swiper v-bind="settings">
           <SwiperSlide v-for="(card, idx) in employees" :key="idx">
-            <TeamCardProfile v-bind="{ ...card }" />
+            <TeamCardProfile v-bind="{ ...card,isDisabled }" />
           </SwiperSlide>
         </Swiper>
       </template>
     </CommonSectionWrapper>
 
-    <div class="container -mt-4 md:-mt-9">
+    <div class="container -mt-4 md:-mt-9" v-if="allMembers">
       <nuxt-link
         to="/about-us/team"
         class="container inline-flex items-center space-x-1 hover:cursor-pointer group"

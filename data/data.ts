@@ -51,7 +51,7 @@ export const aboutCardsData = [
     slug: '/page/campus/',
     title: 'about_the_institute_list[0].title',
     image: '/images/about/the-institute.png',
-    icon: '/svg/about-the-institute/0.svg',
+    icon: '/svg/Campus.svg',
     subtitle: 'about_the_institute_list[0].subtitle',
   },
   {
@@ -59,7 +59,7 @@ export const aboutCardsData = [
     title: 'about_the_institute_list[1].title',
     subtitle: 'about_the_institute_list[1].subtitle',
     image: '/images/about/the-institute.png',
-    icon: '/svg/about-the-institute/1.svg',
+    icon: '/svg/Audience.svg',
   },
   {
     slug: '/page/activisthall',
@@ -67,7 +67,7 @@ export const aboutCardsData = [
     subtitle: 'about_the_institute_list[2].subtitle',
     image: '/images/about/the-institute.png',
 
-    icon: '/svg/about-the-institute/2.svg',
+    icon: '/svg/Conference-hall.svg',
   },
   {
     slug: '/for-students/academic-library',
@@ -75,7 +75,7 @@ export const aboutCardsData = [
     subtitle: 'about_the_institute_list[3].subtitle',
     image: '/images/about/the-institute.png',
 
-    icon: '/svg/about-the-institute/3.svg',
+    icon: '/svg/Library.svg',
   },
 ]
 
@@ -709,7 +709,7 @@ export const educationWrapperData = (
   language: string,
   location: IRegion,
   date_of_admission: string,
-  type_of_education: string
+  education_time_type: string
 ) => {
   const { t, locale } = useI18n()
   console.log('locale', locale)
@@ -723,7 +723,7 @@ export const educationWrapperData = (
     },
     {
       title: t('language'),
-      value: getLanguages().find((item) => item.value === language)?.name,
+      value: language,
     },
     {
       title: t('location'),
@@ -737,8 +737,7 @@ export const educationWrapperData = (
     },
     {
       title: t('type_of_education'),
-      value: getAreaOfStudy().find((item) => item.value === type_of_education)
-        ?.name,
+      value: education_time_type,
     },
   ]
 }

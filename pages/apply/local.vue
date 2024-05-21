@@ -36,7 +36,7 @@ const route = useRoute()
 const router = useRouter()
 const { showToast } = useCustomToast()
 
-const currentStep = ref(1)
+const currentStep = ref(3)
 const currentComponent = ref()
 const components = [
   {

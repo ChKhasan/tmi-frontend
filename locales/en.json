@@ -2,8 +2,13 @@
   "hello": "Hello",
   "footer": {
     "title": "Your future is {highlight}",
-    "text_to_highlight": "bright"
+    "text_to_highlight": "bright",
+    "desc": "Education. Science. Production"
   },
+
+  "employees": "Employees",
+  "departments":"Departments",
+  "about_us_info": "In order to further increase the activity of students in public life, discover their talents and further develop through self-improvement, more than 15 clubs and public organizations have been created at the Tashkent Institute of Management and Economics, in which more than 500 students take an active part. Clubs and teams provide direct assistance to students in meaningful organization of extracurricular activities.",
   "all": "All",
   "bachelory": "Bachelory",
   "first_year": "1st years students",
@@ -69,10 +74,10 @@
   "phone_number": "Phone number",
   "emergency_contact": "Emergency contact",
   "email": "Email",
-  "entrance_via": "Entrance via",
+  "entrance_via": "Type of application",
   "programmes": "Programmes",
   "view_all": "View all",
-  "faculties": "Faculties",
+  "faculties": "Qualification",
   "area_of_study": "Type of education",
   "passport_or_id": "Passport or ID card",
   "highest_qualification": "Highest qualification",
@@ -82,6 +87,11 @@
   "end_date": "End date",
   "high_school_diploma": "High school diplomacy",
   "apply_form": {
+    "options": {
+      "entrance_exam": "Entrance exam",
+      "transfer_of_studies": "Transfer of studies",
+      "dtm_result": "DTM result"
+    },
     "placeholders": {
       "first_name": "Your first name",
       "last_name": "Your last name",
@@ -96,7 +106,7 @@
       "region": "Select region",
       "passport_id_serial_number": "Your passport/ID card serial number",
       "birth_date": "dd.mm.yyyy",
-      "entrance_via": "Select entrance",
+      "entrance_via": "Select",
       "programmes": "Select type of program",
       "faculty": "Enter faculties",
       "passport_or_id": "Drag file here or select file",
@@ -248,9 +258,9 @@
   "certificate": "Certificate",
   "passport_info_title": "Information about passport",
   "passport_info_description": "These parts of the passport must be present when you upload the passport. There should be a general part of them, as well as a part with information about the place of residence.",
-  "day_time" : "Day time, Part time",
+  "day_time" : "Full time",
   "evening": "Evening",
-  "part_time": "Part time",
+  "part_time": "Extramural",
   "secondary_school": "Secondary school",
   "academic_lyceum": "Academic lyceum",
   "private_school": "Private school",

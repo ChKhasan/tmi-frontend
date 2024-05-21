@@ -48,16 +48,17 @@ const entranceViaOptions = computed(() => {
         },
       ]
     : [
+        // 'Вступительный экзамен'
         {
-          name: 'Entrance exam',
+          name: t('apply_form.options.entrance_exam'),
           value: 'entrance_exam',
         },
         {
-          name: 'Transfer of studies',
+          name: t('apply_form.options.transfer_of_studies'),
           value: 'transfer_of_studies',
         },
         {
-          name: 'DTM result',
+          name: t('apply_form.options.dtm_result'),
           value: 'dtm_result',
         },
       ]
@@ -161,13 +162,13 @@ defineExpose({
         />
       </FormGroup>
     </div>
-    <template v-if="values.entrance_via === 'entrance_exam'">
-      <ApplyCardEducation
-        v-for="(exam, idx) in getEntranceExamsOptions"
-        :key="idx"
-        :exam="exam"
-      />
-    </template>
+<!--    <template v-if="values.entrance_via === 'entrance_exam'">-->
+<!--      <ApplyCardEducation-->
+<!--        v-for="(exam, idx) in getEntranceExamsOptions"-->
+<!--        :key="idx"-->
+<!--        :exam="exam"-->
+<!--      />-->
+<!--    </template>-->
   </section>
 </template>
 

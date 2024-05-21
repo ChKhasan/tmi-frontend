@@ -73,7 +73,7 @@ const goToPage = (url: string) => {
         <Transition name="fade-sm" mode="out-in">
           <img
               :key="isTransparent"
-              class="h-10"
+              class="h-12"
               :src="`/svg/logo/${isTransparent ? 'white' : 'multicolor'}.svg`"
               alt="Logo"
           />

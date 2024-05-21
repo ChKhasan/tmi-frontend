@@ -32,7 +32,7 @@ defineProps<Props>()
             :key="index"
             :to="item?.front_url"
             :target="validURL(item?.front_url) ? '_blank' : '_self'"
-            class="text-white text-xs leading-130 font-medium hover:text-red transition-300"
+            class="text-white text-base leading-130 font-medium hover:text-red transition-300"
           >
             {{ item?.title }}
           </NuxtLink>
@@ -41,7 +41,7 @@ defineProps<Props>()
       </div>
       <div class="flex-y-center gap-8">
         <p
-          class="flex-y-center gap-1 text-xs text-white leading-130 font-normal"
+          class="flex-y-center gap-1 text-base text-white leading-130 font-normal"
         >
           <i class="icon-map-pin text-white/60 text-xl leading-5" />
           {{ info?.location?.location_name }}

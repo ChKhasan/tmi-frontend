@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="card.link"
-    class="relative flex flex-col p-4 md:p-7 bg-white shadow-partner-card transition-all transition-300 group hover:cursor-pointer"
+    class="relative flex flex-col justify-end min-h-[150px] p-4 md:p-7 bg-white shadow-partner-card transition-all transition-300 group hover:cursor-pointer"
   >
     <div
         v-if="card.icon"

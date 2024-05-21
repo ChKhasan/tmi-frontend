@@ -21,7 +21,6 @@ const currentTab = ref(props.tab)
 const downloadBrochure = () => {
   downloadFile(props.brochure, 'brochure')
 }
-
 watch(
   () => currentTab.value,
   (e) => console.log(e),

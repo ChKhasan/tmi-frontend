@@ -11,45 +11,45 @@
       <AdmissionsMainContent v-bind="{ data: staticPage, loading: loading }" />
     </AdmissionsSectionWrapper>
 
-    <div class="container">
-      <div class="py-11">
-        <h3 class="text-2xl md:text-[28px] font-bold mb-3 md:mb-6">
-          {{ $t('our_student_services') }}
-        </h3>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-        >
-          <AdmissionsCardService
-            v-for="(service, i) in serviceList"
-            :key="i"
-            :title="service?.title"
-            :link="`student-services/${service?.id}`"
-            :icon="service?.icon"
-            :description="service?.subtitle"
-            content-position="left"
-            bg-class="bg-white"
-          />
-        </div>
-      </div>
+<!--    <div class="container">-->
+<!--      <div class="py-11">-->
+<!--        <h3 class="text-2xl md:text-[28px] font-bold mb-3 md:mb-6">-->
+<!--          {{ $t('our_student_services') }}-->
+<!--        </h3>-->
+<!--        <div-->
+<!--          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"-->
+<!--        >-->
+<!--          <AdmissionsCardService-->
+<!--            v-for="(service, i) in serviceList"-->
+<!--            :key="i"-->
+<!--            :title="service?.title"-->
+<!--            :link="`student-services/${service?.id}`"-->
+<!--            :icon="service?.icon"-->
+<!--            :description="service?.subtitle"-->
+<!--            content-position="left"-->
+<!--            bg-class="bg-white"-->
+<!--          />-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <!--      Links-->
-      <div class="pb-16">
-        <h3 class="text-2xl md:text-[28px] font-bold mb-3 md:mb-6">
-          {{ $t('links') }}
-        </h3>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-        >
-          <StudentCardLinks
-            v-for="(link, i) in linkList"
-            :key="i"
-            :icon="link?.icon"
-            :title="link?.title"
-            :link="link?.url"
-          />
-        </div>
-      </div>
-    </div>
+<!--            Links-->
+<!--      <div class="pb-16">-->
+<!--        <h3 class="text-2xl md:text-[28px] font-bold mb-3 md:mb-6">-->
+<!--          {{ $t('links') }}-->
+<!--        </h3>-->
+<!--        <div-->
+<!--          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"-->
+<!--        >-->
+<!--          <StudentCardLinks-->
+<!--            v-for="(link, i) in linkList"-->
+<!--            :key="i"-->
+<!--            :icon="link?.icon"-->
+<!--            :title="link?.title"-->
+<!--            :link="link?.url"-->
+<!--          />-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 

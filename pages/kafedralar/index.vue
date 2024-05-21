@@ -24,7 +24,14 @@ if (!employees.value) {
 const { data: info } = await useAsyncData('fetchInfo', () =>
     useApi().$get('/common/DepartmentList/')
 )
-console.log("info",info)
+onMounted(() => {
+  info.value.results = info.value.results.map((elem: any) => {
+    return {
+      ...elem,
+      link: '/kafedralar/'+elem.slug
+    }
+  })
+})
 if (!menuList.value?.length) {
   Promise.allSettled([aboutStore.fetchSiteMenuDetail()])
 }
@@ -36,8 +43,7 @@ if (!menuList.value?.length) {
         class="container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 "
     >
       <CommonSectionWrapper
-          :title="t('our_vision')"
-          :description="t('our_vision_description')"
+          :title="t('departments')"
           description-class="mb-7"
           class="col-span-2 lg:col-span-3 !pt-0 md:!pt-[56px]"
           exist-container

@@ -42,6 +42,7 @@
                       title: item.title,
                       slug: item.slug,
                       price: item.tuition_fee,
+                      price_distance: item.tuition_fee_distance,
                     }"
                   />
                 </div>
