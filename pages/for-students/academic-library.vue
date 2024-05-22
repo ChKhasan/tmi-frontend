@@ -7,7 +7,7 @@
       v-bind="{ menu }"
     >
       <div class="static-text" v-html="data?.description" />
-      <StudentCardMap :data="info[0]" class="mt-6" />
+<!--      <StudentCardMap :data="info[0]" class="mt-6" />-->
     </StudentSectionWrapper>
   </section>
 </template>
