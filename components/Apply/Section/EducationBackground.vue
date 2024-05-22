@@ -162,13 +162,13 @@ defineExpose({
         />
       </FormGroup>
     </div>
-<!--    <template v-if="values.entrance_via === 'entrance_exam'">-->
-<!--      <ApplyCardEducation-->
-<!--        v-for="(exam, idx) in getEntranceExamsOptions"-->
-<!--        :key="idx"-->
-<!--        :exam="exam"-->
-<!--      />-->
-<!--    </template>-->
+    <template v-if="values.entrance_via === 'entrance_exam'">
+      <ApplyCardEducation
+        v-for="(exam, idx) in getEntranceExamsOptions"
+        :key="idx"
+        :exam="exam"
+      />
+    </template>
   </section>
 </template>
 
