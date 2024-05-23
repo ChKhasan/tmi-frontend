@@ -66,7 +66,7 @@ if (!employees.value) {
   Promise.allSettled([homeStore.fetchEmployeeList(params.value)])
 }
 Promise.allSettled([aboutStore.fetchDepartmentDetail(route.params?.id)])
-    .then((res: any) => (singleDetail.value = res[0].value.leader))
+    .then((res: any) => (singleDetail.value = res[0].value))
     .finally(() => (loading.value = false))
 Promise.allSettled([aboutStore.fetchDepartmentList(route.params?.id)])
     .then((res: any) => (employees.value = res[0].value.results))
@@ -86,8 +86,8 @@ Promise.allSettled([aboutStore.fetchDepartmentList(route.params?.id)])
           <BaseSkeleton width="100%" height="300px" v-bind="{ loading }" />
           <div v-if="!loading">
             <AboutCardLeadership
-                v-if="singleDetail"
-                :user="singleDetail"
+                v-if="singleDetail?.leader"
+                :user="singleDetail.leader"
                 is-single
             />
 

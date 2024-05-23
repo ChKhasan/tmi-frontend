@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useHomeStore } from '~/store'
-import { useAboutStore } from '~/store/about'
+import {useHomeStore} from '~/store'
+import {useAboutStore} from '~/store/about'
 import {useI18n} from "vue-i18n";
 
 const homeStore = useHomeStore()
@@ -10,8 +10,9 @@ const documents = computed(() => aboutStore.normativeDocs)
 const menu = computed(() => aboutStore.aboutMenuList)
 const menuList = computed(() => aboutStore.aboutMenuList?.children)
 const aboutRankings = computed(() => aboutStore.aboutRankings)
+const list = ref({})
 aboutStore.fetchAboutRankings()
-const { t } = useI18n()
+const {t} = useI18n()
 const params = ref({
   page: 1,
 })
@@ -21,16 +22,23 @@ if (!documents.value) {
 if (!employees.value) {
   Promise.allSettled([homeStore.fetchEmployeeList(params.value)])
 }
-const { data: info } = await useAsyncData('fetchInfo', () =>
+const {data: info} = await useAsyncData('fetchInfo', () =>
     useApi().$get('/common/DepartmentList/')
 )
+// const {data: info, error, pending} = await useAsyncData('fetchInfo', () =>
+//     useApi().$get('/common/DepartmentList/')
+// );
 onMounted(() => {
-  info.value.results = info.value.results.map((elem: any) => {
-    return {
-      ...elem,
-      link: '/kafedralar/'+elem.slug
-    }
+  useApi().$get('/common/DepartmentList/').then((res) => {
+    list.value = res
+    list.value.results = list.value.results.map((elem: any) => {
+      return {
+        ...elem,
+        link: '/kafedralar/' + elem.slug
+      }
+    })
   })
+
 })
 if (!menuList.value?.length) {
   Promise.allSettled([aboutStore.fetchSiteMenuDetail()])
@@ -49,11 +57,9 @@ if (!menuList.value?.length) {
           exist-container
       >
         <template #default>
-
-
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
             <AboutCardDiscover
-                v-for="card in info?.results"
+                v-for="card in list?.results"
                 :key="card.id"
                 :card="card"
             />
