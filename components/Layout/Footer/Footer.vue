@@ -119,12 +119,12 @@ const footerLinks = computed(() => {
       link: '/about-us',
     },
     {
-      title: t('tmii_university'),
-      link: '/about-us/tmii-university',
+      title: t('leadership'),
+      link: '/about-us/leadership',
     },
     {
-      title: t('why_choose'),
-      link: '/about-us/why-choose-tmii-university',
+      title: t('educational_programs'),
+      link: '/education',
     },
     {
       title: t('vacancies'),
@@ -134,10 +134,10 @@ const footerLinks = computed(() => {
       title: t('student_services'),
       link: '/admissions-and-scholarships/student-services',
     },
-    {
-      title: t('privacy_policy'),
-      link: '/static/privacy-policy',
-    },
+    // {
+    //   title: t('privacy_policy'),
+    //   link: '/static/privacy-policy',
+    // },
     {
       title: t('contact_us'),
       link: '/contact-us',
