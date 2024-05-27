@@ -4,7 +4,7 @@
       <div :key="loading">
         <div
           v-if="data?.description && !loading"
-          class="static-text text-sm text-gray-1"
+          class="static-text-16 static-text text-sm text-gray-1"
           v-html="data?.description"
         />
         <BaseSkeleton width="100%" height="444px" v-bind="{ loading }" />
@@ -33,5 +33,9 @@ const show = ref(false)
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
+}
+.static-text-16 p {
+  font-size: 16px;
+  line-height: 28px;
 }
 </style>

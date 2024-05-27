@@ -10,14 +10,14 @@ defineProps<Props>()
 </script>
 <template>
   <div class="flex flex-col md:flex-row md:items-center md:space-x-6">
-    <div class="basis-[40%]">
-      <img
-        :src="image"
-        :alt="title"
-        class="w-full aspect-[429px/260px] object-cover"
-      />
-    </div>
-    <div class="basis-[60%]">
+<!--    <div class="basis-[40%]">-->
+<!--      <img-->
+<!--        :src="image"-->
+<!--        :alt="title"-->
+<!--        class="w-full aspect-[429px/260px] object-cover"-->
+<!--      />-->
+<!--    </div>-->
+    <div class="basis-[70%]">
       <div>
         <CommonSectionTitle :title="title" />
       </div>

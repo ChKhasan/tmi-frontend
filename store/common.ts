@@ -27,6 +27,7 @@ export const useCommonStore = defineStore('common', {
         useApi()
           .$get('/common/CitizenshipList/')
           .then((res: IResponse<ICitizenship>) => {
+            console.log(res)
             this.citizenship = res.results
             resolve(res)
           })
