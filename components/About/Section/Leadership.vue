@@ -6,7 +6,7 @@
   >
     <Transition name="fade" mode="out-in">
       <div :key="loading.list">
-        <AboutCardLeadership :main="true" v-if="list?.length" :user="getLeader" />
+        <AboutCardLeadership :main="true" v-if="list?.length" :user="getLeader"  :link="`leadership/${getLeader?.id}`" />
         <div
           v-if="list?.length > 1"
           class="flex flex-col justify-center space-y-12 py-6 md:mt-16 md:pl-5"

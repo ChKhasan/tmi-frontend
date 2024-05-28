@@ -19,9 +19,38 @@ export const useCommonStore = defineStore('common', {
     programmes: [] as IEducationTypeList[],
     directions: [] as IDirections[],
     employmentLists: [] as IEmployment[],
+    organizationStructure: []
   }),
 
   actions: {
+    fetchOrganizationStructure() {
+      return new Promise((resolve, reject) => {
+        useApi()
+            .$get(`common/DepartmentsAndSections/`)
+            .then((data: any) => {
+              this.organizationStructure = data
+              console.log(data)
+              this.organizationStructure?.children?.push(
+                  {
+                    title: 'our_story',
+                    slug: 'our-story',
+                    front_url: '/about-us/our-story',
+                    children: null,
+                  },
+                  {
+                    title: 'our_mission',
+                    slug: 'our-mission',
+                    front_url: '/about-us/our-mission',
+                    children: null,
+                  }
+              )
+              resolve(data)
+            })
+            .catch((error) => {
+              reject(error)
+            })
+      })
+    },
     getCitizenship(): Promise<IResponse<ICitizenship>> {
       return new Promise<IResponse<ICitizenship>>((resolve, reject) => {
         useApi()

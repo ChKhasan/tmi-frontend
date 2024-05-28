@@ -24,7 +24,7 @@ defineProps<Props>()
     <img
       src="/images/right-banner.png"
       alt="Purpose BG"
-      class="absolute hidden sm:block h-[400px] right-0 bottom-0"
+      class="absolute hidden sm:block h-[446px] right-0 bottom-0"
     />
     <img
       src="/Content.png"

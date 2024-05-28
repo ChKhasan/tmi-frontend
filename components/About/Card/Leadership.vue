@@ -39,7 +39,7 @@
           <p class="text-gray-1 text-sm font-normal block mb-4">
             {{ user.description }}
           </p>
-          <nuxt-link :to="`leadership/${user.id}`">
+          <nuxt-link :to="link">
             <BaseButton   :class="{'bg-white !text-blue': main}" size="large" :text="$t('more')" />
           </nuxt-link>
         </div>
@@ -64,6 +64,7 @@ interface Props {
     days_of_work: string
     short_description?: string
   }
+  link: string,
 }
 
 const props = defineProps<Props>()
