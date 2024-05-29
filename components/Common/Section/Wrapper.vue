@@ -48,13 +48,13 @@ const back = () => {
         v-html="description"
       >
       </p>
-      <p
-          v-if="info"
-          :class="descriptionClass"
-          class="text-base font-normal leading-140 text-dark mt-3 md:mt-6"
-      >
-        {{ info }}
-      </p>
+<!--      <p-->
+<!--          v-if="info"-->
+<!--          :class="descriptionClass"-->
+<!--          class="text-base font-normal leading-140 text-dark mt-3 md:mt-6"-->
+<!--      >-->
+<!--        {{ info }}-->
+<!--      </p>-->
       <div :class="[wrapperClass, { 'mt-8': title || description }]">
         <slot />
       </div>

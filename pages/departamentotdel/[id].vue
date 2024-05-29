@@ -29,6 +29,15 @@
       </div>
     </Transition>
   </AboutSectionWrapper>
+  <CommonSectionWrapper v-if="employees?.results?.length" :title="t('employees')">
+    <template #after>
+      <Swiper v-bind="settings">
+        <SwiperSlide v-for="(card, idx) in employees?.results" :key="idx">
+          <TeamCardProfile v-bind="{ ...card,isDisabled: true }" />
+        </SwiperSlide>
+      </Swiper>
+    </template>
+  </CommonSectionWrapper>
 </div>
 </template>
 
@@ -39,7 +48,7 @@ import { useHomeStore } from '~/store'
 import { useAboutStore } from '~/store/about'
 import {reactive} from "vue";
 import {useI18n} from "vue-i18n";
-
+import { Swiper, SwiperSlide } from 'swiper/vue'
 const { t } = useI18n()
 const homeStore = useHomeStore()
 const aboutStore = useAboutStore()
@@ -50,6 +59,39 @@ const breadcrumbRoutes = reactive([
     name: t('departamentotdel'),
   },
 ])
+const settings = computed(() => {
+  return {
+    spaceBetween: 0,
+    grabCursor: true,
+    keyboard: { enabled: true },
+    slidesPerView: 2,
+    breakpoints: {
+      '640': {
+        slidesPerView: 3,
+      },
+      '768': {
+        slidesPerView: 4,
+      },
+      '1024': {
+        slidesPerView: 6,
+      },
+      '1440': {
+        slidesPerView: 7,
+      },
+      '1920': {
+        slidesPerView: 8,
+      },
+    },
+    centerMode: true,
+    loop: true,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+  }
+})
 const loading = computed(() => pending.value);
 // watch(
 //     () => loading.value,
@@ -70,7 +112,11 @@ onMounted(() => {
 const { data: singleDetail,error,pending } = useAsyncData(() =>
     useApi().$get(`common/DepartmentsAndSections/${route.params?.id}`)
 )
+const { data: employees } = useAsyncData(() =>
+    useApi().$get(`common/EmployeeList/?department_and_section=${route.params?.id}`)
+)
 if (!menu.value.length) {
   Promise.allSettled([aboutStore.fetchSiteMenuDetail()])
 }
+
 </script>
