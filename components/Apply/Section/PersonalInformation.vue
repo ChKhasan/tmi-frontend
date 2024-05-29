@@ -166,8 +166,9 @@ defineExpose({
         :placeholder="t('apply_form.placeholders.citizenship')"
       />
     </FormGroup>
-    <FormGroup :label="t('region')" :errors="$v.region?.$errors" is-required>
+    <FormGroup :label="t('region')" :errors="$v.region?.$errors" :is-required="values.citizenship == 1">
       <FormSelect
+          :disabled="!values.citizenship || values.citizenship !== 1"
         v-model="values.region"
         :error="$v.region?.$error"
         label-key="name"

@@ -18,6 +18,7 @@ const { t } = useI18n()
 
 const homeStore = useHomeStore()
 const route = useRoute()
+const staticPage = ref({})
 
 const aboutSideBarRoutes = ref([])
 Promise.allSettled([homeStore.fetchSiteMenuDetail(String(route.name))]).then(
@@ -25,6 +26,12 @@ Promise.allSettled([homeStore.fetchSiteMenuDetail(String(route.name))]).then(
     aboutSideBarRoutes.value = res[0].value?.children
   }
 )
+Promise.allSettled([homeStore.fetchStaticData('about-us/')]).then(
+    (res: any) => (staticPage.value = res[0]?.value)
+)
+onMounted(() => {
+  console.log("as",staticPage)
+})
 const discover = computed(() => {
   return [
     {
@@ -51,7 +58,7 @@ const discover = computed(() => {
   >
     <CommonSectionWrapper
       :title="t('our_vision')"
-      :description="t('our_vision_description')"
+      :description="staticPage.description"
       :info="t('about_us_info')"
       description-class="mb-7"
       class="col-span-2 lg:col-span-3 !pt-0 md:!pt-[56px]"

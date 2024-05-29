@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import 'swiper/css'
-
-import { Swiper, SwiperSlide } from 'swiper/vue'
+// import 'swiper/css'
+//
+// import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useI18n } from 'vue-i18n'
 
 interface Props {

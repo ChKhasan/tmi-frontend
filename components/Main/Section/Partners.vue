@@ -1,19 +1,22 @@
 <script setup lang="ts">
 // css
-import 'swiper/css'
+// import 'swiper/css'
+//
+// import { Swiper, SwiperSlide } from 'swiper/vue'
+import {useI18n} from 'vue-i18n'
 
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { useI18n } from 'vue-i18n'
+import {useMainStore} from '~/store/main'
 
-import { useMainStore } from '~/store/main'
-
-const { t } = useI18n()
+const {t} = useI18n()
 
 const settings = computed(() => {
   return {
     autoplay: {
-      delay: 5000,
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false,
     },
+    speed: 1000,
     loop: true,
     spaceBetween: 24,
     slidesPerView: 'auto',
@@ -50,18 +53,38 @@ store.fetchPartnerList()
 
 <template>
   <CommonSectionWrapper :title="t('our_partners')">
+
     <template #after>
-      <Swiper v-bind="settings" class="!py-10 -my-10 2xl:container">
+      <Swiper
+          v-bind="settings"
+          :modules="[SwiperAutoplay]"
+          class="!py-10 -my-10 2xl:container"
+          :loop="true"
+      >
         <SwiperSlide
-          v-for="(item, index) in loading ? 6 : partners"
-          :key="index"
+            v-for="(item, index) in loading ? 6 : partners"
+            :key="index"
         >
           <MainCardPartners
-            v-bind="{ item, loading }"
-            class="[1560px]:!mx-auto"
+              v-bind="{ item, loading }"
+              class="[1560px]:!mx-auto"
           />
         </SwiperSlide>
       </Swiper>
+      <!--      <Swiper :loop="true" :autoplay="{-->
+      <!--      delay: 2000,-->
+      <!--      disableOnInteraction: true,-->
+      <!--    }" v-bind="settings" class="!py-10 -my-10 2xl:container">-->
+      <!--        <SwiperSlide-->
+      <!--          v-for="(item, index) in loading ? 6 : partners"-->
+      <!--          :key="index"-->
+      <!--        >-->
+      <!--          <MainCardPartners-->
+      <!--            v-bind="{ item, loading }"-->
+      <!--            class="[1560px]:!mx-auto"-->
+      <!--          />-->
+      <!--        </SwiperSlide>-->
+      <!--      </Swiper>-->
     </template>
   </CommonSectionWrapper>
 </template>

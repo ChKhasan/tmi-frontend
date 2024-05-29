@@ -37,20 +37,20 @@ export const useAboutStore = defineStore('about', {
           .$get(`common/SiteMenuDetail/about-us`)
           .then((data: any) => {
             this.aboutMenuList = data
-            this.aboutMenuList?.children?.push(
-              {
-                title: 'our_story',
-                slug: 'our-story',
-                front_url: '/about-us/our-story',
-                children: null,
-              },
-              {
-                title: 'our_mission',
-                slug: 'our-mission',
-                front_url: '/about-us/our-mission',
-                children: null,
-              }
-            )
+            // this.aboutMenuList?.children?.push(
+            //   {
+            //     title: 'our_story',
+            //     slug: 'our-story',
+            //     front_url: '/about-us/our-story',
+            //     children: null,
+            //   },
+            //   {
+            //     title: 'our_mission',
+            //     slug: 'our-mission',
+            //     front_url: '/about-us/our-mission',
+            //     children: null,
+            //   }
+            // )
             resolve(data)
           })
           .catch((error) => {
@@ -152,6 +152,7 @@ export const useAboutStore = defineStore('about', {
         useApi()
           .$get(`common/Statistic/?statistic_section__slug=about-us`)
           .then((res: any) => {
+            console.log("rrr",res)
             this.aboutRankings = res.results
             resolve(res)
           })

@@ -15,21 +15,17 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/tailwind.css', '~/assets/icomoon/style.css'],
-  modules: [
-    '@nuxtjs/tailwindcss',
-    // 'nuxt-swiper',
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: [
-          // automatically imports `defineStore`
-          'defineStore', // import { defineStore } from 'pinia'
-          ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
-        ],
-      },
-    ],
-    '@nuxt/image',
-  ],
+  modules: ['@nuxtjs/tailwindcss', // 'nuxt-swiper',
+  [
+    '@pinia/nuxt',
+    {
+      autoImports: [
+        // automatically imports `defineStore`
+        'defineStore', // import { defineStore } from 'pinia'
+        ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+      ],
+    },
+  ], '@nuxt/image', 'nuxt-swiper'],
   nitro: {
     serveStatic: true,
   },

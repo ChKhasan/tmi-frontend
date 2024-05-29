@@ -25,6 +25,7 @@ if (!employees.value) {
 if (!menuList.value?.length) {
   Promise.allSettled([aboutStore.fetchSiteMenuDetail()])
 }
+
 </script>
 
 <template>

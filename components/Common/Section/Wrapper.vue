@@ -45,8 +45,8 @@ const back = () => {
         v-if="description"
         :class="descriptionClass"
         class="text-base font-normal leading-140 text-dark mt-3 md:mt-6"
+        v-html="description"
       >
-        {{ description }}
       </p>
       <p
           v-if="info"

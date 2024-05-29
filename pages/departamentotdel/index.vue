@@ -8,14 +8,14 @@
     >
       <Transition name="fade" mode="out-in">
         <div :key="loading.list">
-          <AboutCardLeadership :main="true" v-if="list?.length" :user="getLeader"  :link="`/departamentotdel/${getLeader.id}`" />
+<!--          <AboutCardLeadership :main="true" v-if="list?.length" :user="getLeader"  :link="`/departamentotdel/${getLeader.id}`" />-->
           <div
-              v-if="list?.length > 1"
-              class="flex flex-col justify-center space-y-12 py-6 md:mt-16 md:pl-5"
+              v-if="list?.length > 0"
+              class="flex flex-col justify-center space-y-12 py-6"
           >
             <AboutCardLeadership
                 :main="false"
-                v-for="(item, i) in list?.slice(1)"
+                v-for="(item, i) in list"
                 :key="i"
                 :user="item"
                 :link="`/departamentotdel/${item.id}`"

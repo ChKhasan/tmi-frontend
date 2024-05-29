@@ -8,7 +8,7 @@ defineProps<Props>()
 <template>
   <div class="flex relative items-start h-[220px] justify-center">
     <div
-      class="absolute top-0 left-0 card-bg h-[220px] w-[72%] p-6 z-1 overflow-hidden"
+      class="absolute top-0 left-0 card-bg h-[220px] w-[67%] p-6 z-1 overflow-hidden"
     >
       <h1 class="text-white uppercase text-xl font-bold mb-1">
         {{ $t(`${title}`) }}
@@ -24,10 +24,10 @@ defineProps<Props>()
     <img
       src="/images/right-banner.png"
       alt="Purpose BG"
-      class="absolute hidden sm:block h-[446px] right-0 bottom-0"
+      class="absolute hidden sm:block h-[429px] right-0 bottom-0"
     />
     <img
-      src="/Content.png"
+      src="/Content.jpg"
       alt="Purpose BG"
       class="block sm:hidden absolute h-[220px] right-0 bottom-0"
     />
