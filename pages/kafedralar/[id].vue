@@ -42,7 +42,7 @@ const { t } = useI18n()
 const breadcrumbRoutes = reactive([
   {
     path: '/about-us',
-    name: t('department'),
+    name: t('departments'),
   },
   {
     path: '/about-us/leadership',
