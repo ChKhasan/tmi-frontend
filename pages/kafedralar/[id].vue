@@ -38,20 +38,17 @@ const settings = computed(() => {
     },
   }
 })
+const singleDetail = ref({})
 const { t } = useI18n()
 const breadcrumbRoutes = reactive([
   {
     path: '/about-us',
     name: t('departments'),
   },
-  {
-    path: '/about-us/leadership',
-    name: t('leadership'),
-  },
 ])
 
 
-const singleDetail = ref({})
+
 const employees = ref([])
 const loading = ref(true)
 
@@ -66,7 +63,15 @@ if (!employees.value) {
   Promise.allSettled([homeStore.fetchEmployeeList(params.value)])
 }
 Promise.allSettled([aboutStore.fetchDepartmentDetail(route.params?.id)])
-    .then((res: any) => (singleDetail.value = res[0].value))
+    .then((res: any) => {
+      singleDetail.value = res[0].value
+      breadcrumbRoutes.push(
+        {
+          path: '/about-us/leadership',
+          name: singleDetail.value?.title,
+        },
+      )
+    })
     .finally(() => (loading.value = false))
 Promise.allSettled([aboutStore.fetchDepartmentList(route.params?.id)])
     .then((res: any) => (employees.value = res[0].value.results))
@@ -78,7 +83,7 @@ Promise.allSettled([aboutStore.fetchDepartmentList(route.params?.id)])
   <div>
         <BaseBreadcrumb :routes="breadcrumbRoutes" />
     <AboutSectionWrapper
-        :title="t('leadership')"
+        :title="singleDetail?.title"
         :active-route="'leadership'"
     >
       <Transition name="fade" mode="out-in">
