@@ -1,7 +1,8 @@
 <template>
   <NuxtLink
     :to="card.link"
-    class="relative flex flex-col justify-end min-h-[185px] p-4 md:p-7 bg-white shadow-partner-card transition-all transition-300 group hover:cursor-pointer"
+    class="relative flex flex-col min-h-[185px] p-4 md:p-7 bg-white shadow-partner-card transition-all transition-300 group hover:cursor-pointer"
+    :class="reverse ? 'justify-start':'justify-end'"
   >
     <div
         v-if="card.icon"
@@ -11,7 +12,8 @@
     </div>
 
     <p
-      class="absolute right-0 top-[28px] inline-flex items-center justify-center py-2.5 px-4 gap-1 bg-gray-4 transition-300 group-hover:bg-blue"
+      class="absolute right-0  inline-flex items-center justify-center py-2.5 px-4 gap-1 bg-gray-4 transition-300 group-hover:bg-blue"
+      :class="reverse ? 'bottom-[28px]':'top-[28px]'"
     >
       <span
         class="text-sm leading-130 font-semibold text-dark transition-300 group-hover:text-white"
@@ -20,7 +22,9 @@
       <i class="icon-chevron text-2xl text-dark group-hover:text-white" />
     </p>
 
-    <h1 class="mt-8 mb-2 text-xl text-dark font-semibold leading-130">
+    <h1 class="mb-2 text-xl text-dark font-semibold leading-130"
+        :class="reverse ? 'mt-2':'mt-8'"
+    >
       {{ card.title }}
     </h1>
     <p class="text-gray-1 text-sm leading-130 line-clamp-2" v-if="card.subtitle">
@@ -31,6 +35,7 @@
 
 <script setup lang="ts">
 interface Props {
+  reverse?: boolean,
   card: {
     icon: string
     title: string

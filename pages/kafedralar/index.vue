@@ -62,6 +62,7 @@ if (!menuList.value?.length) {
                 v-for="card in list?.results"
                 :key="card.id"
                 :card="card"
+                :reverse="true"
             />
           </div>
         </template>

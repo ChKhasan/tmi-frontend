@@ -25,6 +25,11 @@ function back2Home() {
       >
         {{ $t('confirmation_description') }}
       </div>
+      <div
+          class="max-w-[862px] text-center text-base leading-140 text-gray-1 font-normal mt-2"
+      >
+        {{ $t('confirmation_description_last') }}
+      </div>
       <BaseButton size="large" class="mt-8" @click="back2Home()">
         <span>{{ $t('back_to_home') }}</span>
       </BaseButton>

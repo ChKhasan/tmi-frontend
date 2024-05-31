@@ -9,7 +9,7 @@
           class="order-1 md:order-2 md:col-span-3 relative top-0 md:-top-20 space-y-6"
         >
           <CommonSidebar
-            :title="t('education')"
+            :title="t('programmes')"
             v-bind="{ routes: menu, activeRoute, slug }"
           />
           <CommonAds />

@@ -16,7 +16,7 @@ const routes = computed(() => {
   ]
 })
 
-const contactLoading = computed(() => contactStore.contactLoading)
+const contactLoading = computed(() => contactStore.contactLoading);
 const contactTop = computed(() => contactStore.contactList?.slice(0, 2))
 const contactBottom = computed(() => contactStore.contactList?.slice(2))
 
