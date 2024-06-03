@@ -14,7 +14,7 @@ const breadcrumbRoutes = computed(() => [
   },
   {
     path: '',
-    name: route.params.slug as string,
+    name: data.value?.title as string,
   },
 ])
 

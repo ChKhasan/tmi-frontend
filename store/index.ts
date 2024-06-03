@@ -57,6 +57,7 @@ export const useHomeStore = defineStore('home', {
         useApi()
           .$get(`common/PurposeList/`, { params })
           .then((data: any) => {
+            console.log(data.results)
             this.purposeLists = data.results
             resolve(data)
           })

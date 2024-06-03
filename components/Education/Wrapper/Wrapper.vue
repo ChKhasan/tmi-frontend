@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { educationBachelorTabs, educationWrapperData } from '~/data/data'
+import {  educationWrapperData } from '~/data/data'
 import { downloadFile } from '~/utils'
 import type { IRegion } from '~/types/services/common.types'
+import {useI18n} from "vue-i18n";
 interface Props {
   tab: number
   title: string
@@ -15,9 +16,22 @@ interface Props {
 
 const props = defineProps<Props>()
 const emit = defineEmits(['change'])
-
+const { t } = useI18n()
 const currentTab = ref(props.tab)
-
+const educationBachelorTabs = [
+  {
+    title: t('general_info'),
+    id: 1,
+    icon: 'icon-chevron',
+    slug: 1,
+  },
+  {
+    title: t('study_plan'),
+    id: 2,
+    icon: 'icon-chevron',
+    slug: 2,
+  },
+]
 const downloadBrochure = () => {
   downloadFile(props.brochure, 'brochure')
 }

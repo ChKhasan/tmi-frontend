@@ -16,11 +16,13 @@
         </div>
       </CommonSectionWrapper>
     </div>
-    <nuxt-img
-      src="/svg/logo-pattern.svg"
-      alt="Logo pattern"
-      class="absolute -right-48 -bottom-56 w-[657px] h-[662.63px]"
-    />
+    <img  src="/svg/logo-pattern.svg"
+          alt="Logo pattern"   class="absolute -right-48 -bottom-56 w-[657px] h-[662.63px]">
+<!--    <nuxt-img-->
+<!--      src="/svg/logo-pattern.svg"-->
+<!--      alt="Logo pattern"-->
+<!--      class="absolute -right-48 -bottom-56 w-[657px] h-[662.63px]"-->
+<!--    />-->
   </div>
 </template>
 

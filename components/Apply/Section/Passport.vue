@@ -13,9 +13,8 @@ const props = defineProps<{
 const { t } = useI18n()
 const { local } = useApplyStore()
 const { required } = useTranslate()
-
 const { application } = unref(props)
-const { values, $v } = useForm(application, {
+const { values, $v,reset } = useForm(application, {
   passport_file_1: {
     required,
   },

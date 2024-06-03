@@ -35,6 +35,12 @@
           }"
           variant="col"
         />
+        <p
+            v-if="user?.short_desc && isSingle"
+            class=" text-sm font-normal mt-4 leading-140 block mb-4 line-clamp-4"
+            v-html="user?.short_desc"
+            :class="main ? 'text-white':'text-gray-1'"
+        />
         <div v-else>
           <p class="text-gray-1 text-sm font-normal block mb-4">
             {{ user.description }}

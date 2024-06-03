@@ -1,28 +1,33 @@
 import useVuelidate, {
-  GlobalConfig,
-  Validation,
-  ValidationArgs,
+    GlobalConfig,
+    Validation,
+    ValidationArgs,
 } from '@vuelidate/core'
-import { reactive, Ref, UnwrapNestedRefs } from 'vue'
+import {reactive, Ref, UnwrapNestedRefs} from 'vue'
 
 export type TFormArguments<T> = [
-  initialValues: T,
-  validations: ValidationArgs,
-  vuelidateConfig?: GlobalConfig
+    initialValues: T,
+    validations: ValidationArgs,
+    vuelidateConfig?: GlobalConfig
 ]
 
 export interface TForm<T> {
-  values: UnwrapNestedRefs<T>
-  $v: Ref<Validation>
+    values: UnwrapNestedRefs<T>
+    $v: Ref<Validation>,
+    reset: () => void
 }
 
 export function useForm<T extends object>(
-  ...args: TFormArguments<T>
+    ...args: TFormArguments<T>
 ): TForm<T> {
-  const [initialValues, validations, vuelidateConfig] = args
+    const [initialValues, validations, vuelidateConfig] = args
 
-  const values = reactive<T>(initialValues)
-  const $v = useVuelidate(validations, values, vuelidateConfig)
-
-  return { values, $v }
+    let values = reactive<T>(initialValues)
+    const initialValuesCopy = {...initialValues}
+    const $v = useVuelidate(validations, values, vuelidateConfig)
+    const reset = () => {
+        values = {}
+        $v.value.$reset()
+    }
+    return {values, $v, reset}
 }

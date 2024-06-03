@@ -20,9 +20,6 @@ const breadcrumbRoutes = computed(() => [
 const { data, error } = useAsyncData(() =>
   useApi().$get(`common/StaticPage/masters-degree`)
 )
-onMounted(() => {
-  console.log(data)
-})
 if (error.value) {
   showError({ statusCode: 404 })
 }

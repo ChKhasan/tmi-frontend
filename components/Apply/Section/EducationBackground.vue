@@ -16,7 +16,7 @@ const { t } = useI18n()
 const applyStore = useApplyStore()
 const { required, requiredIf, isNumber } = useTranslate()
 
-const { values, $v } = useForm(application, {
+const { values, $v,reset } = useForm(application, {
   entrance_via: {
     required,
   },

@@ -91,7 +91,7 @@ Promise.allSettled([aboutStore.fetchDepartmentList(route.params?.id)])
           <div v-if="!loading">
             <AboutCardLeadership
                 v-if="singleDetail?.leader"
-                :user="singleDetail.leader"
+                :user="{...singleDetail.leader,short_desc: singleDetail?.short_desc}"
                 is-single
             />
 

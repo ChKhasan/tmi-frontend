@@ -57,7 +57,7 @@ export const useCommonStore = defineStore('common', {
           .$get('/common/CitizenshipList/')
           .then((res: IResponse<ICitizenship>) => {
             console.log("countries",res);
-            this.citizenship = res.results
+            this.citizenship = res
             resolve(res)
           })
           .catch((err) => reject(err))

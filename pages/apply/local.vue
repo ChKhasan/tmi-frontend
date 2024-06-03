@@ -83,6 +83,7 @@ const next = async () => {
     const formData = changeJsonToFormData(localApp)
     try {
       await store.createApplication(formData)
+      store.resetForm()
     } catch (error: any) {
       for (const key in error._data) {
         const currentObject = error._data[key]

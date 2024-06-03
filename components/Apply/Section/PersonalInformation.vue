@@ -91,7 +91,7 @@ const gender = computed(() => {
 const passportError = ref(false)
 watch(
   () => values.passport_serial_number,
-  (newValue) => {
+  (newValue: any) => {
     if (newValue.length === 10) {
       existPassport(newValue)
         .then(() => (passportError.value = false))

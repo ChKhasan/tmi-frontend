@@ -12,7 +12,7 @@ export const useApi = (apiUrl?: string) => {
       baseURL,
       headers: {
         ...options?.headers,
-        'Accept-Language': locale.value || 'en',
+        'Accept-Language': locale.value || 'uz',
       },
     })
   }

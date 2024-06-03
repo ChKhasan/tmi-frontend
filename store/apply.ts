@@ -15,6 +15,9 @@ export const useApplyStore = defineStore('apply', {
   }),
 
   actions: {
+    resetForm() {
+      this.local = {}
+    },
     getEntranceExams(): Promise<IResponse<IEntranceExam>> {
       return new Promise<IResponse<IEntranceExam>>((resolve, reject) => {
         useApi()
