@@ -43,6 +43,7 @@
                       slug: item.slug,
                       price: item.tuition_fee,
                       price_distance: item.tuition_fee_distance,
+                      tab
                     }"
                   />
                 </div>
@@ -77,6 +78,7 @@ const tab = ref('bachelor-degree')
 watch(
   () => tab.value,
   (e) => {
+    console.log(e)
     admissionStore.fetchDirectionList(e)
   }
 )

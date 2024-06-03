@@ -5,7 +5,8 @@ interface Props {
   image?: string
   slug?: string
   price?: number | string
-  price_distance?: number | string
+  price_distance?: number | string,
+  tab?: string
 }
 
 defineProps<Props>()
@@ -27,10 +28,10 @@ defineProps<Props>()
       <div v-if="price" class="flex items-center gap-1">
         <span class="icon-cash text-2xl text-gray-3" />
         <p class="text-md font-semibold text-white">
-          {{ $t('day_time') }}: {{ formatNumberSpace(+price, 0) }} UZS
+          {{ tab === 'masters-degree' ? $t('price'):$t('day_time') }}: {{ formatNumberSpace(+price, 0) }} UZS
         </p>
       </div>
-      <div v-if="price" class="flex items-center gap-1">
+      <div v-if="price && tab !== 'masters-degree'" class="flex items-center gap-1">
         <span class="icon-cash text-2xl text-gray-3" />
         <p class="text-md font-semibold text-white">
           {{ $t('part_time') }}: {{ formatNumberSpace(+price_distance, 0) }} UZS
