@@ -65,6 +65,6 @@ const variants: Record<TButtonVariants, string> = {
 const sizes: Record<TButtonSizes, string> = {
   small: 'py-1.5 px-4 text-xs font-semibold leading-130',
   medium: 'py-2.5 px-5 font-semibold text-xxs leading-120',
-  large: 'py-3 px-7 font-semibold text-sm leading-130',
+  large: 'py-3 px-7 font-semibold text-md leading-130',
 }
 </script>
