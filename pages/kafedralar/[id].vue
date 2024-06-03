@@ -29,7 +29,6 @@ const settings = computed(() => {
       },
     },
     centerMode: true,
-    loop: true,
     centeredSlides: true,
     centeredSlidesBounds: true,
     autoplay: {
@@ -42,7 +41,7 @@ const singleDetail = ref({})
 const { t } = useI18n()
 const breadcrumbRoutes = reactive([
   {
-    path: '/about-us',
+    path: '/kafedralar',
     name: t('departments'),
   },
 ])
@@ -110,13 +109,13 @@ Promise.allSettled([aboutStore.fetchDepartmentList(route.params?.id)])
       </Transition>
     </AboutSectionWrapper>
     <CommonSectionWrapper v-if="employees?.length" :title="t('employees')">
-      <template #after>
+<!--      <template #after>-->
         <Swiper v-bind="settings">
           <SwiperSlide v-for="(card, idx) in employees" :key="idx">
             <TeamCardProfile v-bind="{ ...card,isDisabled: true }" />
           </SwiperSlide>
         </Swiper>
-      </template>
+<!--      </template>-->
     </CommonSectionWrapper>
 <!--    <AboutSectionTeam v-if="employees?.length" v-bind="{ employees,isDisabled: true }" />-->
   </div>

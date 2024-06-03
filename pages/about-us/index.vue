@@ -35,8 +35,8 @@ if (!menuList.value?.length) {
     />
 <!--    <AboutSectionTeam v-if="employees?.length" v-bind="{ employees, allMembers: true }" />-->
 <!--    <AboutSectionDocuments v-bind="{ documents: documents?.slice(0, 4) }" />-->
-    <AboutSectionFacts v-bind="{ rankings: aboutRankings }" />
-    <MainSectionCollapse class="!bg-[#FFFFFF29]" />
+<!--    <AboutSectionFacts v-bind="{ rankings: aboutRankings }" />-->
+<!--    <MainSectionCollapse class="!bg-[#FFFFFF29]" />-->
 <!--    <MainSectionDiscover />-->
   </div>
 </template>
