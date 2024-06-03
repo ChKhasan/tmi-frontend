@@ -57,7 +57,7 @@ const discover = computed(() => {
     class="container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"
   >
     <CommonSectionWrapper
-      :title="t('our_vision')"
+      :title="staticPage.title"
       :description="staticPage.description"
       :info="t('about_us_info')"
       description-class="mb-7"

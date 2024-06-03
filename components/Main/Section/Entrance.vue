@@ -58,7 +58,7 @@
           <!--              </span>-->
           <!--            </template>-->
           <!--          </i18n-t>-->
-          <p class="text-base font-normal leading-130 text-white mb-5 md:mb-11">
+          <p class="text-lg font-normal leading-130 text-white mb-5 md:mb-11">
             {{ item?.subtitle }}
           </p>
         </SwiperSlide>

@@ -18,7 +18,7 @@ defineProps<Props>()
   >
     <p
       v-if="degree"
-      class="py-1 px-2 mb-3 degree text-xs text-gray-4 font-semibold mt-auto w-max"
+      class="py-1 px-2 mb-3 degree text-sm text-gray-4 font-semibold mt-auto w-max"
     >
       {{ degree }}
     </p>
@@ -26,13 +26,13 @@ defineProps<Props>()
       <p class="font-bold text-white">{{ title }}</p>
       <div v-if="price" class="flex items-center gap-1">
         <span class="icon-cash text-2xl text-gray-3" />
-        <p class="text-sm font-semibold text-white">
+        <p class="text-md font-semibold text-white">
           {{ $t('day_time') }}: {{ formatNumberSpace(+price, 0) }} UZS
         </p>
       </div>
       <div v-if="price" class="flex items-center gap-1">
         <span class="icon-cash text-2xl text-gray-3" />
-        <p class="text-sm font-semibold text-white">
+        <p class="text-md font-semibold text-white">
           {{ $t('part_time') }}: {{ formatNumberSpace(+price_distance, 0) }} UZS
         </p>
       </div>

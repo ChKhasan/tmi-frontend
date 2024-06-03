@@ -2,7 +2,7 @@
   <div class="mb-10">
     <BaseBreadcrumb :routes="breadcrumbRoutes" />
     <AdmissionsSectionWrapper
-      :title="t('registration')"
+      :title="staticPage.title"
       active-route="admission-proccess"
       body-class="!py-7 sm:!pt-14 sm:!pb-16 sm:!py-0"
       v-bind="{ menu: menuList, slug: menu?.slug }"

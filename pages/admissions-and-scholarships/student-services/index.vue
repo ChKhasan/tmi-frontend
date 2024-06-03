@@ -3,7 +3,7 @@
     <BaseBreadcrumb :routes="breadcrumbRoutes" />
 
     <AdmissionsSectionWrapper
-      :title="$t('student_services')"
+      :title="staticPage.title"
       active-route="student-services"
       body-class="!py-7 sm:!pt-14 sm:!pb-16 sm:!py-0"
       v-bind="{ menu: menuList, slug: menu?.slug }"

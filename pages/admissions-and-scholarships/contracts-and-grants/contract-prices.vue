@@ -7,7 +7,7 @@
       body-class="pt-8"
       v-bind="{ menu: menuList, slug: menu?.slug }"
     >
-      <p class="text-sm text-gray-1">
+      <p class="text-lg text-gray-1">
         {{ t('about_contract_prices') }}
       </p>
       <Transition name="fade-sm" mode="out-in">
