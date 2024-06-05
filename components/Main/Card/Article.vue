@@ -11,7 +11,7 @@
     <h1
       class="md:mt-8 mb-2 text-xl text-dark font-semibold leading-130 transition-all duration-500 group-hover:text-white"
     >
-      {{ $t(data.title) }}11
+      {{ $t(data.title) }}
     </h1>
     <!-- <p
       class="text-gray-1 text-sm leading-130 transition-all duration-500 group-hover:text-white line-clamp-3 md:line-clamp-2"

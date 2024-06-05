@@ -1,9 +1,21 @@
 <template>
   <footer class="hidden-on-print">
     <div class="footer bg-blue">
+
+
       <div
-          class="container flex-y-center max-md:!items-stretch pb-8 md:pb-10 pt-10 md:pt-10 relative"
+          class="container flex flex-col max-md:!items-stretch pb-8 md:pb-10 pt-4 md:pt-8 relative"
       >
+        <div class=" mb-10 h-4 text-grid">
+          <span></span>
+          <div class="flex justify-start relative">
+            <p class="text-white absolute left-0 whitespace-nowrap md:text-[24px] text-sm sm:text-sm leading-130 font-extrabold" >{{
+                t('footer.desc')
+              }}</p>
+          </div>
+
+          <span></span>
+        </div>
         <div class="menu-grid">
           <div class="md:pt-[100px] pt-6">
             <NuxtLink
@@ -30,9 +42,9 @@
             <!--            </span>-->
             <!--          </template>-->
             <!--        </i18n-t>-->
-            <p class="text-white md:text-sm text-sm sm:text-sm leading-130 font-bold" >{{
-                t('footer.desc')
-              }}</p>
+<!--            <p class="text-white whitespace-nowrap md:text-sm text-sm sm:text-sm leading-130 font-bold" >{{-->
+<!--                t('footer.desc')-->
+<!--              }}</p>-->
             <div class="social flex gap-6 mt-[30px]">
               <CommonFooterSocials
                   v-bind="social"
@@ -221,6 +233,11 @@ background: linear-gradient(114deg, #2e4259 -75.53%, #10161c 96.48%);
   line-height: 22.4px;
   text-align: left;
   color: #fff;
+}
+.text-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 70px;
 }
 @media (max-width: 768px) {
   .menu-grid {

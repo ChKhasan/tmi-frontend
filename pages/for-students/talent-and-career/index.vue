@@ -51,7 +51,9 @@ const breadcrumbRoutes = computed(() => [
 
 const { list, loading, currentPage, params, pageChange, paginationData } =
   useListFetcher<IStudentStory>('institute-experience/StudentStoryList/')
-
+onMounted(() => {
+  console.log("list",list)
+})
 Promise.allSettled([studentStore.fetchMenu()])
 </script>
 

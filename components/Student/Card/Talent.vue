@@ -19,7 +19,7 @@ defineProps<Props>()
         <img
           v-lazy="data?.student?.photo"
           class="absolute inset-0 w-full h-full object-cover"
-          :alt="data?.student?.full_name"
+          :alt="data?.student_name"
         />
       </BaseSkeleton>
     </div>
@@ -28,7 +28,7 @@ defineProps<Props>()
         <h3
           class="text-xl text-dark font-semibold leading-130 line-clamp-1 group-hover:text-blue"
         >
-          {{ data?.student?.full_name }}
+          {{ data?.student_name }}
         </h3>
       </BaseSkeleton>
       <BaseSkeleton

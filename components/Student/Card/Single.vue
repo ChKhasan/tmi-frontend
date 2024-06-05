@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center flex-col md:flex-row bg-white">
     <img
-      :src="user?.student?.photo"
+        v-lazy="user?.student?.photo"
       class="h-full aspect-[3/4] max-w-[278px] object-cover"
       :alt="user?.student?.full_name"
     />
