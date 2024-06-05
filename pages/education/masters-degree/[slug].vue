@@ -9,8 +9,8 @@ const { t } = useI18n()
 
 const breadcrumbRoutes = computed(() => [
   {
-    path: '/education/bachelor',
-    name: t('bachelor_degree'),
+    path: '/education/masters-degree',
+    name: t('masters_degree'),
   },
   {
     path: '',
@@ -56,12 +56,12 @@ useSeoMeta({
       <div class="transition-300">
         <EducationSectionGeneral
           v-if="currentComponentId === 1 && data"
-          :education="{...data, title: t('about_this_bachelor_degree')}"
+          :education="{...data, title: t('about_this_masters_degree')}"
         />
         <EducationSectionStudy
           v-if="currentComponentId === 2"
-          :title="t('study_about_title')"
           :description="data?.study_plan_description"
+          :title="t('study_about_title_masters')"
         />
         <EducationSectionCooperation v-if="currentComponentId === 3" />
         <EducationSectionAdmission

@@ -39,11 +39,11 @@ defineProps<Props>()
       </div>
     </div>
     <div v-if="image">
-      <img
-        :src="image"
-        :alt="'Image of ' + image"
-        class="absolute left-0 top-0 w-full h-full object-cover object-center -z-6"
-      />
+<!--      <img-->
+<!--        :src="image"-->
+<!--        :alt="'Image of ' + image"-->
+<!--        class="absolute left-0 top-0 w-full h-full object-cover object-center -z-6"-->
+<!--      />-->
 
       <!--    overlay  -->
       <span class="overlay absolute left-0 top-0 w-full h-full -z-[5]" />

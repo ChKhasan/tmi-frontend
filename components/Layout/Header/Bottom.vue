@@ -78,11 +78,13 @@ const goToPage = (url: string) => {
             >
               {{ item?.title }}
             </button>
-            <div class="flex flex-col gap-2 mt-3">
+            <div class="flex flex-col gap-2 mt-1">
+<!--              class="text-sm font-medium leading-130 text-gray-1 hover:text-red transition-300"-->
               <NuxtLink
                 v-for="(i, idx) in item?.children"
                 :key="idx"
-                class="text-sm font-medium leading-130 text-gray-1 hover:text-red transition-300"
+                class="text-dark text-base font-bold leading-130 cursor-pointer transition-300 hover:text-red"
+
                 :to="i?.front_url"
               >
                 {{ i?.title }}

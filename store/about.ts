@@ -69,7 +69,16 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
+    fetchFacultiesList(params: any) {
+      return new Promise((resolve, reject) => {
+        useApi()
+            .$get(`common/EmployeeList/`,{params})
+            .then((res: any) => {
+              resolve(res)
+            })
+            .catch((err) => reject(err))
+      })
+    },
     fetchDepartmentDetail(slug: string) {
       return new Promise((resolve, reject) => {
         useApi()
@@ -80,7 +89,16 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
+    fetchFacultiesDetail(slug: string) {
+      return new Promise((resolve, reject) => {
+        useApi()
+            .$get(`common/FacultyDetail/${slug}`)
+            .then((res: any) => {
+              resolve(res)
+            })
+            .catch((err) => reject(err))
+      })
+    },
     fetchReasons(params: IParams) {
       return new Promise((resolve, reject) => {
         useApi()

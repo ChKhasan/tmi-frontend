@@ -23,7 +23,7 @@ const faqLists = computed(() => educationStore.faqList)
 
 <template>
   <EducationWrapperAbout
-    :title="t('about_this_bachelor_degree')"
+    :title="education?.title"
     :brochure="education?.brochure"
   >
     <template #body>

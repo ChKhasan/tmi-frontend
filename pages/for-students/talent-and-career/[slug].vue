@@ -4,7 +4,7 @@
     <StudentSectionWrapper
       :title="t('talent_and_career')"
       active-route="talent-and-career"
-      v-bind="{ menu }"
+      v-bind="{ menu,sideBarHide: true }"
     >
       <StudentCardSingle :user="data" class="mb-4 md:mb-8" />
       <div class="bg-white p-3 md:p-6">

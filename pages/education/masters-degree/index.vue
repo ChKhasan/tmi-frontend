@@ -1,26 +1,28 @@
 <script setup lang="ts">
-import {useI18n} from 'vue-i18n'
+import { useI18n } from 'vue-i18n'
 
-import {useCommonStore} from '~/store/common'
-import {useEducationStore} from '~/store/education'
+import { useCommonStore } from '~/store/common'
+import { useEducationStore } from '~/store/education'
 
-const {t} = useI18n()
+const { t } = useI18n()
 const store = useCommonStore()
 const educationStore = useEducationStore()
 const menu = computed(() => educationStore.menu)
 const getDirections = computed(() => store.directions)
-
+const route = useRoute()
 const breadcrumbRoutes = computed(() => [
   {
-    path: '/education/bachelor',
-    name: t('bachelor_degree'),
+    path: '/education/masters-degree',
+    name: t('masters_degree'),
   },
 ])
 
 const fetchDirections = async () => {
-  await store.getDirections('bachelor-degree')
+  await store.getDirections('masters-degree')
 }
-
+const { data, error } = useAsyncData(() =>
+    useApi().$get(`common/StaticPage/masters-degree`)
+)
 fetchDirections()
 
 Promise.allSettled([educationStore.fetchSidebarMenu()])
@@ -28,13 +30,13 @@ Promise.allSettled([educationStore.fetchSidebarMenu()])
 
 <template>
   <section class="mb-10">
-    <BaseBreadcrumb :routes="breadcrumbRoutes"/>
+    <BaseBreadcrumb :routes="breadcrumbRoutes" />
 
     <EducationSectionWrapper
-        :title="t('bachelor_degree')"
-        has-footer
-        active-route="bachelor"
-        v-bind="{ menu: menu?.children, slug: menu?.slug }"
+      :title="data?.title"
+      has-footer
+      active-route="bachelor"
+      v-bind="{ menu: menu?.children,activeRoute: 'masters-degree', slug: menu?.slug }"
     >
       <template #default>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
@@ -45,20 +47,19 @@ Promise.allSettled([educationStore.fetchSidebarMenu()])
             >
             </MainCardLittle>
           </nuxt-link>
-
-          <!--          <AboutCardCategory-->
-          <!--            v-for="(card, idx) in getDirections"-->
-          <!--            :key="idx"-->
-          <!--            v-bind="card"-->
-          <!--            :link="'/education/bachelor/' + card.slug"-->
-          <!--          />-->
+<!--          <AboutCardCategory-->
+<!--            v-for="(card, idx) in getDirections"-->
+<!--            :key="idx"-->
+<!--            v-bind="card"-->
+<!--            :link="'/education/masters-degree/' + card.slug"-->
+<!--          />-->
         </section>
       </template>
     </EducationSectionWrapper>
   </section>
 </template>
 
-<style >
+<style>
 .spec-card h1 {
   font-size: 16px;
 }

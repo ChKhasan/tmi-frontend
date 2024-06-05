@@ -35,16 +35,20 @@
           }"
           variant="col"
         />
-        <p
-            v-if="user?.short_desc && isSingle"
-            class=" text-sm font-normal mt-4 leading-140 block mb-4 line-clamp-4"
-            v-html="user?.short_desc"
-            :class="main ? 'text-white':'text-gray-1'"
-        />
+        <div class="flex mt-4 items-center" v-if="isSingle">
+          <i v-if="user?.short_desc " class="icon-calendar text-2xl mr-2 text-red"></i>
+          <p
+              class=" text-sm font-normal  leading-140 block  line-clamp-4"
+              v-html="user?.short_desc"
+              :class="main ? 'text-white':'text-gray-1'"
+          />
+        </div>
+
         <div v-else>
           <p class="text-gray-1 text-sm font-normal block mb-4">
             {{ user.description }}
           </p>
+
           <nuxt-link :to="link">
             <BaseButton   :class="{'bg-white !text-blue': main}" size="large" :text="$t('more')" />
           </nuxt-link>

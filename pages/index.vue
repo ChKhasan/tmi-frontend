@@ -8,6 +8,7 @@
     <MainSectionStories />
     <NewsAndEvents events-wrapper-class="!pt-0" />
     <MainSectionCollapse />
+    <MainSectionOurVideos/>
     <MainSectionPartners />
 <!--    <MainSectionUniversity />-->
 <!--    <MainSectionDiscover />-->

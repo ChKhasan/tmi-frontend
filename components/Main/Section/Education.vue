@@ -55,7 +55,7 @@
       <div
         class="w-full md:w-2/3 bg-no-repeat bg-center bg-cover flex flex-col md:flex-row"
         :style="`background-image: url(${
-          activeExtraChildCover ?? '/pattern/education.webp'
+          activeExtraChildCover ?? '/images/talent-image--1.png'
         });`"
       >
         <CollapseTransition dimension="width">

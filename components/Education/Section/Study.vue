@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-defineProps<{ description: string }>()
+defineProps<{ description: string,title: string }>()
 
 const { t } = useI18n()
 </script>
 
 <template>
   <section class="mb-10">
-    <EducationWrapperAbout :title="t('study_about_title')">
+    <EducationWrapperAbout :title="title">
       <template #body>
         <div
           v-if="description"

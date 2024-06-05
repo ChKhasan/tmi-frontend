@@ -105,6 +105,31 @@ export const useMainStore = definePiniaStore('mainStore', () => {
         })
     })
   }
+  const videosList = ref<IBranch[]>([])
+  const videosListLoading = ref(true)
+  const fetchVideosList = () => {
+    if (videosList.value.length) {
+      videosListLoading.value = false
+      return
+    }
+    return new Promise((resolve, reject) => {
+      useApi()
+          .$get<IDefaultResponse<IBranch>>('/common/Videos/', {
+            params: { limit: 100 },
+          })
+          .then((res) => {
+            videosList.value = res.results
+            console.log("video",res);
+            resolve(res)
+          })
+          .catch((err) => {
+            reject(err)
+          })
+          .finally(() => {
+            videosListLoading.value = false
+          })
+    })
+  }
   return {
     statistics,
     statisticsLoading,
@@ -118,5 +143,8 @@ export const useMainStore = definePiniaStore('mainStore', () => {
     branchList,
     branchListLoading,
     fetchBranchList,
+    videosList,
+    videosListLoading,
+    fetchVideosList
   }
 })

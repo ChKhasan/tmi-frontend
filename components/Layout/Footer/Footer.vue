@@ -1,6 +1,6 @@
 <template>
   <footer class="hidden-on-print">
-    <div class="footer">
+    <div class="footer bg-blue">
       <div
           class="container flex-y-center max-md:!items-stretch pb-8 md:pb-10 pt-10 md:pt-10 relative"
       >
@@ -30,7 +30,7 @@
             <!--            </span>-->
             <!--          </template>-->
             <!--        </i18n-t>-->
-            <p class="text-white text-sm font-normal leading-130 hover:text-red transition-300" >{{
+            <p class="text-white md:text-sm text-sm sm:text-sm leading-130 font-bold" >{{
                 t('footer.desc')
               }}</p>
             <div class="social flex gap-6 mt-[30px]">
@@ -191,7 +191,8 @@ getSocialLinks()
 
 <style scoped>
 .footer {
-//background: linear-gradient(114deg, #2e4259 -75.53%, #10161c 96.48%); background-image: url("/images/footer.png");
+background: linear-gradient(114deg, #2e4259 -75.53%, #10161c 96.48%);
+//background-image: url("/images/footer.png");
 }
 
 .menu-grid {

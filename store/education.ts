@@ -99,6 +99,7 @@ export const useEducationStore = defineStore('education', {
           .$get<IMenu>(`common/SiteMenuDetail/education/`)
           .then((res) => {
             this.menu = res
+            console.log(res)
             resolve(res)
           })
           .catch((err) => {

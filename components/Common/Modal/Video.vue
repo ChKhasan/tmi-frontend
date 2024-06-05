@@ -27,7 +27,8 @@ defineEmits(['close'])
         <iframe
           width="920px"
           height="520px"
-          :src="`https://www.youtube.com/embed/${convertToEmbed(link)}?rel=0`"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          :src="`https://www.youtube.com/embed/${convertToEmbed(link)}?modestbranding=1&rel=0&autoplay=1&enablejsapi=1&origin=https%3A%2F%2Fteamuni.uz&widgetid=1`"
           allowfullscreen
         />
       </div>
