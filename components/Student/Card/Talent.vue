@@ -17,7 +17,7 @@ defineProps<Props>()
     <div class="aspect-[278/192] relative w-full">
       <BaseSkeleton width="100%" height="100%" v-bind="{ loading }">
         <img
-          v-lazy="data?.student?.photo"
+          v-lazy="data?.image"
           class="absolute inset-0 w-full h-full object-cover"
           :alt="data?.student_name"
         />
