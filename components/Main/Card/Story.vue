@@ -13,8 +13,8 @@ defineProps<Props>()
     :to="`/for-students/talent-and-career/${item?.slug || 'ad'}`"
     class="w-full aspect-[6/7] story-card relative group cursor-pointer p-5 flex items-end bg-gray-4"
     :style="
-      !loading && item?.student?.photo
-        ? `background-image: url('${item?.student?.photo}')`
+      !loading && item?.image
+        ? `background-image: url('${item?.image}')`
         : undefined
     "
     :class="{ 'pointer-events-none': loading }"
@@ -26,7 +26,7 @@ defineProps<Props>()
       <h4
         class="text-white text-sm font-bold leading-130 pb-1.5 relative after:absolute after:top-full after:h-0.5 after:w-[100px] after:bg-white/20 after:left-0"
       >
-        {{ item?.student?.full_name }}
+        {{ item?.student_name }}
       </h4>
     </div>
     <div
@@ -37,7 +37,7 @@ defineProps<Props>()
         <h4
           class="text-white text-sm font-bold leading-130 pb-1.5 relative after:absolute after:top-full after:h-0.5 after:w-[100px] after:bg-white/20 after:left-0"
         >
-          {{ item?.student?.full_name }}
+          {{ item?.student_name }}
         </h4>
         <p class="text-white text-sm font-medium leading-130 mt-7">
           {{ item?.title }}

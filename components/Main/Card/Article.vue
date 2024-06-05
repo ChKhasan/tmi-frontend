@@ -11,7 +11,7 @@
     <h1
       class="md:mt-8 mb-2 text-xl text-dark font-semibold leading-130 transition-all duration-500 group-hover:text-white"
     >
-      {{ $t(data.title) }}
+      {{ $t(data.title) }}11
     </h1>
     <!-- <p
       class="text-gray-1 text-sm leading-130 transition-all duration-500 group-hover:text-white line-clamp-3 md:line-clamp-2"
@@ -20,15 +20,19 @@
     </p> -->
 
     <div
-      class="w-full h-full duration-500 flex-shrink-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 absolute left-0 top-0 bg-dark/60 -z-1"
+      class="w-full h-full card-bg duration-500 flex-shrink-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 absolute left-0 top-0 -z-1"
     >
+<!--      <img-->
+<!--        v-lazy="data.image"-->
+<!--        :alt="$t(data.title)"-->
+<!--        class="w-full h-full object-cover object-center absolute left-0 top-0 -z-1"-->
+<!--      />-->
       <img
-        v-lazy="data.image"
-        :alt="$t(data.title)"
-        class="w-full h-full object-cover object-center absolute left-0 top-0 -z-1"
+          src="/svg/rectangles.svg"
+          alt="Patterns"
+          class="absolute right-0 h-[164px] z-0"
       />
-
-      <div class="w-full h-full absolute left-0 top-0 bg-dark/60 z-0"></div>
+<!--      <div class="w-full h-full absolute left-0 top-0 bg-dark/60 z-0"></div>-->
     </div>
   </RouterLink>
 </template>
@@ -46,3 +50,8 @@ interface Props {
 
 defineProps<Props>()
 </script>
+<style scoped>
+.card-bg {
+  background: linear-gradient(113.8deg, #2e4259 -75.53%, #10161c 96.48%);
+}
+</style>

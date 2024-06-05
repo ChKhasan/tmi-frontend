@@ -50,7 +50,7 @@ export const aboutCardsData = [
   {
     slug: '/page/campus/',
     title: 'about_the_institute_list[0].title',
-    image: '/images/about/the-institute.png',
+    image: '/svg/rectangles.svg',
     icon: '/svg/Campus.svg',
     subtitle: 'about_the_institute_list[0].subtitle',
   },

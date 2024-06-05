@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="card.link"
-    class="relative flex flex-col min-h-[185px] p-4 md:p-7 bg-white shadow-partner-card transition-all transition-300 group hover:cursor-pointer"
+    class="relative card-bg flex flex-col min-h-[185px] p-4 md:p-7 bg-white shadow-partner-card transition-all transition-300 group hover:cursor-pointer"
     :class="reverse ? 'justify-start':'justify-end'"
   >
     <div
@@ -21,8 +21,8 @@
       >
       <i class="icon-chevron text-2xl text-dark group-hover:text-white" />
     </p>
-
-    <h1 class="mb-2 text-xl text-dark font-semibold leading-130"
+<!--    text-dark-->
+    <h1 class="mb-2 text-xl text-white font-semibold leading-130"
         :class="reverse ? 'mt-2':'mt-8'"
     >
       {{ card.title }}
@@ -30,6 +30,11 @@
     <p class="text-gray-1 text-sm leading-130 line-clamp-2" v-if="card.subtitle">
       {{ card.subtitle }}
     </p>
+    <img
+        src="/svg/rectangles.svg"
+        alt="Patterns"
+        class="absolute right-0 h-[164px] z-0"
+    />
   </NuxtLink>
 </template>
 
@@ -46,3 +51,8 @@ interface Props {
 
 defineProps<Props>()
 </script>
+<style scoped>
+.card-bg {
+  background: linear-gradient(113.8deg, #2e4259 -75.53%, #10161c 96.48%);
+}
+</style>
