@@ -42,9 +42,9 @@
             <!--            </span>-->
             <!--          </template>-->
             <!--        </i18n-t>-->
-            <p class="text-white uppercase whitespace-nowrap md:text-sm text-sm sm:text-sm leading-130 font-bold" >{{
-                t('footer.desc')
-              }}</p>
+<!--            <p class="text-white uppercase whitespace-nowrap md:text-sm text-sm sm:text-sm leading-130 font-bold" >{{-->
+<!--                t('footer.desc')-->
+<!--              }}</p>-->
             <div class="social flex gap-6 mt-[30px]">
               <CommonFooterSocials
                   v-bind="social"
@@ -135,21 +135,25 @@ const footerLinks = computed(() => {
       link: '/about-us/leadership',
     },
     {
+      title: t('our-mission'),
+      link: '/about-us/our-mission',
+    },
+    {
       title: t('educational_programs'),
       link: '/education',
     },
     {
-      title: t('vacancies'),
-      link: '/about-us/vacancies',
+      title: t('process_register'),
+      link: '/admissions-and-scholarships/admission-proccess/',
     },
     {
       title: t('student_services'),
       link: '/admissions-and-scholarships/student-services',
     },
-    // {
-    //   title: t('privacy_policy'),
-    //   link: '/static/privacy-policy',
-    // },
+    {
+      title: t('faculties1'),
+      link: '/faculties',
+    },
     {
       title: t('contact_us'),
       link: '/contact-us',

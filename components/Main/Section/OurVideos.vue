@@ -52,7 +52,7 @@ store.fetchVideosList()
 </script>
 
 <template>
-  <CommonSectionWrapper :title="t('our_videos')" class="bg-white">
+  <CommonSectionWrapper  class="bg-white">
     <template #after>
 <div class="container">
 

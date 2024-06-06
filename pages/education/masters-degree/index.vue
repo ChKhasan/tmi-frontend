@@ -17,14 +17,15 @@ const breadcrumbRoutes = computed(() => [
   },
 ])
 
-const fetchDirections = async () => {
-  await store.getDirections('masters-degree')
-}
+// const fetchDirections = async () => {
+//   await store.getDirections('masters-degree')
+// }
 const { data, error } = useAsyncData(() =>
     useApi().$get(`common/StaticPage/masters-degree`)
 )
-fetchDirections()
-
+// fetchDirections()
+const { loading, pageChange, list, paginationData, params, currentPage } =
+    useListFetcher<any>(`education/DirectionList/?education_type__slug=masters-degree`, 9)
 Promise.allSettled([educationStore.fetchSidebarMenu()])
 </script>
 
@@ -40,13 +41,21 @@ Promise.allSettled([educationStore.fetchSidebarMenu()])
     >
       <template #default>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          <nuxt-link v-for="(item, idx) in getDirections" :to="'/education/bachelor/' + item.slug" :key="idx">
+          <nuxt-link v-for="(item, idx) in list" :to="'/education/bachelor/' + item.slug" :key="idx">
             <MainCardLittle
                 :title="$t(`${item.title}`)"
                 class="spec-card p-5 h-[120px]"
             >
             </MainCardLittle>
           </nuxt-link>
+          <BasePagination
+              class="mt-8 flex justify-end"
+              v-bind="{ currentPage }"
+              pagination-buttons
+              :total="paginationData.count"
+              :limit="params.limit"
+              @input="pageChange"
+          />
 <!--          <AboutCardCategory-->
 <!--            v-for="(card, idx) in getDirections"-->
 <!--            :key="idx"-->
