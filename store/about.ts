@@ -30,7 +30,6 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
     fetchSiteMenuDetail() {
       return new Promise((resolve, reject) => {
         useApi()
@@ -58,7 +57,6 @@ export const useAboutStore = defineStore('about', {
           })
       })
     },
-
     fetchDepartmentList(slug: string) {
       return new Promise((resolve, reject) => {
         useApi()
@@ -111,7 +109,6 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
     fetchCooperation() {
       return new Promise((resolve, reject) => {
         useApi()
@@ -123,7 +120,6 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
     fetchSingleCooperation(id: number) {
       return new Promise((resolve, reject) => {
         useApi()
@@ -134,7 +130,6 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
     fetchVacancies(params: IParams) {
       this.vacancyLoading = true
       return new Promise((resolve, reject) => {
@@ -149,7 +144,6 @@ export const useAboutStore = defineStore('about', {
           .finally(() => (this.vacancyLoading = false))
       })
     },
-
     fetchVacancyDetail(id: number) {
       return new Promise<IVacancyDetail>((resolve, reject) => {
         useApi()
@@ -160,7 +154,6 @@ export const useAboutStore = defineStore('about', {
           .catch((err) => reject(err))
       })
     },
-
     fetchAboutRankings() {
       return new Promise((resolve, reject) => {
         if (this.aboutRankings.length) {

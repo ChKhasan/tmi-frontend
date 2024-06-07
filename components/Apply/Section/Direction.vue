@@ -46,7 +46,7 @@ watch(
     isSelectedProgrammes.value = false
 
     if (slug) {
-      store.getDirections(slug)
+      store.getDirections(slug,100)
     }
   },
   { deep: true }

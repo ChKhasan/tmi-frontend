@@ -100,11 +100,11 @@ export const useCommonStore = defineStore('common', {
       })
     },
 
-    getDirections(slug: string): Promise<IResponse<IDirections>> {
+    getDirections(slug: string,limit?: number): Promise<IResponse<IDirections>> {
       return new Promise<IResponse<IDirections>>((resolve, reject) => {
         useApi()
           .$get('education/DirectionList/', {
-            params: { education_type__slug: slug },
+            params: { education_type__slug: slug,limit: limit || 10 },
           })
           .then((res: IResponse<IDirections>) => {
             this.directions = res.results

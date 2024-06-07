@@ -42,6 +42,7 @@ const faqLists = computed(() => educationStore.faqList)
     :link="education?.video_url"
   />
   <TeacherSectionProfile />
+
   <CommonFaq v-if="faqLists.length" :faq="faqLists" />
 </template>
 
