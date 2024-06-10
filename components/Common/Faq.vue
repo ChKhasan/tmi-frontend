@@ -17,13 +17,13 @@ defineProps<{
       <BaseCollapse
         v-for="item in faq"
         :key="item.order"
-        :title="item.faq.question"
+        :title="item.question"
         title-class="text-dark text-left text-base md:text-[22px] font-semibold line-clamp-2 leading-130"
         body-class="!py-0"
       >
         <div
           class="text-sm font-normal leading-140 pt-0 pb-5"
-          v-html="item.faq.answer"
+          v-html="item.answer"
         />
       </BaseCollapse>
     </div>

@@ -8,17 +8,16 @@ const { t } = useI18n()
 
 <template>
   <section class="mb-10">
-    <EducationWrapperAbout :title="title">
-      <template #body>
-        <div
-          v-if="description"
-          class="text-sm leading-140 text-gray-1 font-normal"
-          v-html="description"
-        />
-
-        <CommonNoData v-else class="py-3 md:py-0" />
-      </template>
-    </EducationWrapperAbout>
+<!--    <EducationWrapperAbout :title="title">-->
+<!--      <template #body>-->
+<!--        <div-->
+<!--          v-if="description"-->
+<!--          class="text-sm leading-140 text-gray-1 font-normal"-->
+<!--          v-html="description"-->
+<!--        />-->
+<!--        <CommonNoData v-else class="py-3 md:py-0" />-->
+<!--      </template>-->
+<!--    </EducationWrapperAbout>-->
     <EducationSectionSubjectsTable />
   </section>
 </template>

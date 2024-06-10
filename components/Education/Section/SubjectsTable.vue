@@ -32,7 +32,7 @@ const checkSubjects = (subjects: IStudyTableSemester[]) => {
       <h1
         class="mb-5 md:mb-6 text-xl md:text-2.5xl text-dark font-bold line-clamp-2"
       >
-        Study plan of Economic
+        {{t('study_plan') }}
       </h1>
 
       <BaseCollapse

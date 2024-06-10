@@ -140,7 +140,7 @@ const footerLinks = computed(() => {
     },
     {
       title: t('educational_programs'),
-      link: '/education',
+      link: '/education/bachelor',
     },
     {
       title: t('process_register'),

@@ -23,7 +23,13 @@ const breadcrumbRoutes = computed(() => [
 const { loading, pageChange, list, paginationData, params, currentPage } =
     useListFetcher<any>(`education/DirectionList/?education_type__slug=bachelor-degree`, 9)
 // fetchDirections()
+const fetchFaq = async () => {
+  await educationStore.getFaqList()
+}
 
+fetchFaq()
+
+const faqLists = computed(() => educationStore.faqList)
 Promise.allSettled([educationStore.fetchSidebarMenu()])
 </script>
 
@@ -62,6 +68,7 @@ Promise.allSettled([educationStore.fetchSidebarMenu()])
           <!--            :link="'/education/bachelor/' + card.slug"-->
           <!--          />-->
         </section>
+        <CommonFaq class="bg-[transparent] mt-4" v-if="faqLists.length" :faq="faqLists" />
       </template>
     </EducationSectionWrapper>
   </section>

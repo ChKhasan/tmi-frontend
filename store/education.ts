@@ -76,10 +76,10 @@ export const useEducationStore = defineStore('education', {
       return new Promise((resolve, reject) => {
         useApi()
           .$get<IResponse<IEducationFAQList>>(
-            `education/DirectionFAQList/?direction_slug=${directionSlug}`
+            `common/FAQList/?directions__direction__slug=${directionSlug}`
           )
           .then((res) => {
-            this.faqList = res.results
+            this.faqList = res
             resolve(res)
           })
           .catch((err) => {
@@ -87,7 +87,21 @@ export const useEducationStore = defineStore('education', {
           })
       })
     },
-
+    getFaqList() {
+      return new Promise((resolve, reject) => {
+        useApi()
+            .$get<IResponse<IEducationFAQList>>(
+                `common/FAQList/`
+            )
+            .then((res) => {
+              this.faqList = res
+              resolve(res)
+            })
+            .catch((err) => {
+              reject(err)
+            })
+      })
+    },
     fetchSidebarMenu() {
       return new Promise((resolve, reject) => {
         if (this.menu?.children?.length) {

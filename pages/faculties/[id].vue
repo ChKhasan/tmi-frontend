@@ -104,6 +104,14 @@ Promise.allSettled([
                 is-single
             />
 
+
+<!--            <div v-if="employees.length > 0" class="flex flex-col justify-center space-y-6 py-2 md:mt-4 md:pl-5">-->
+<!--              <AboutCardLeadership-->
+<!--                  v-for="(card, idx) in employees"-->
+<!--                  :user="{...card, position: card.position.title}"-->
+<!--                  is-single-->
+<!--              />-->
+<!--            </div>-->
             <div
                 v-if="singleDetail?.description"
                 class="bg-white p-6 relative z-10 my-8"
@@ -113,26 +121,17 @@ Promise.allSettled([
                   v-html="singleDetail?.description"
               />
             </div>
-            <div v-if="employees.length > 0" class="flex flex-col justify-center space-y-6 py-2 md:mt-4 md:pl-5">
-              <AboutCardLeadership
-                  v-for="(card, idx) in employees"
-                  :user="{...card, position: card.position.title}"
-                  is-single
-              />
-            </div>
           </div>
         </div>
       </Transition>
     </AboutSectionWrapper>
 
-    <CommonSectionWrapper v-if="employees?.length" :title="t('mentors')">
-<!--      <template #after>-->
+    <CommonSectionWrapper v-if="employees?.length" :title="t('employees')">
         <Swiper v-bind="settings">
           <SwiperSlide v-for="(card, idx) in mentors" :key="idx">
             <TeamCardProfile v-bind="{ ...card,isDisabled: true }" />
           </SwiperSlide>
         </Swiper>
-<!--      </template>-->
     </CommonSectionWrapper>
 <!--    <AboutSectionTeam v-if="employees?.length" v-bind="{ employees,isDisabled: true }" />-->
   </div>

@@ -24,6 +24,13 @@ const { data, error } = useAsyncData(() =>
     useApi().$get(`common/StaticPage/masters-degree`)
 )
 // fetchDirections()
+const fetchFaq = async () => {
+  await educationStore.getFaqList()
+}
+
+fetchFaq()
+
+const faqLists = computed(() => educationStore.faqList)
 const { loading, pageChange, list, paginationData, params, currentPage } =
     useListFetcher<any>(`education/DirectionList/?education_type__slug=masters-degree`, 9)
 Promise.allSettled([educationStore.fetchSidebarMenu()])
@@ -63,6 +70,7 @@ Promise.allSettled([educationStore.fetchSidebarMenu()])
 <!--            :link="'/education/masters-degree/' + card.slug"-->
 <!--          />-->
         </section>
+        <CommonFaq class="bg-[transparent] mt-4" v-if="faqLists.length" :faq="faqLists" />
       </template>
     </EducationSectionWrapper>
   </section>

@@ -10,7 +10,7 @@
         >
           <CommonSidebar
             v-if="!hasSideBar"
-            :title="t('aboutus')"
+            :title="t('about_us')"
             v-bind="{ routes: menu, slug, activeRoute }"
           />
           <CommonAds />
