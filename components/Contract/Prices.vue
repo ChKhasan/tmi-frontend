@@ -14,7 +14,7 @@ defineProps<Props>()
 
 <template>
   <div
-    class="relative w-full h-full flex flex-col min-h-[212px] p-5 pb-6 transition-all transition-300 group hover:cursor-pointer z-0"
+    class="relative overflow-hidden w-full h-full flex flex-col min-h-[212px] p-5 pb-6 transition-all transition-300 group hover:cursor-pointer z-0"
     :class="{ 'bg-white': !image }"
   >
     <p
@@ -46,12 +46,30 @@ defineProps<Props>()
 <!--      />-->
 
       <!--    overlay  -->
-      <span class="overlay absolute left-0 top-0 w-full h-full -z-[5]" />
+      <div
+          class="w-full h-full card-bg duration-500 flex-shrink-0 opacity-100  md:opacity-100 absolute left-0 top-0 -z-1"
+      >
+        <!--      <img-->
+        <!--        v-lazy="data.image"-->
+        <!--        :alt="$t(data.title)"-->
+        <!--        class="w-full h-full object-cover object-center absolute left-0 top-0 -z-1"-->
+        <!--      />-->
+        <img
+            src="/svg/rectangles.svg"
+            alt="Patterns"
+            class="absolute right-0 h-[164px] z-0"
+        />
+        <!--      <div class="w-full h-full absolute left-0 top-0 bg-dark/60 z-0"></div>-->
+      </div>
+<!--      <span class="card-bg absolute left-0 top-0 w-full h-full -z-[5]" />-->
     </div>
   </div>
 </template>
 
 <style scoped>
+.card-bg {
+  background: linear-gradient(113.8deg, #2e4259 -75.53%, #10161c 96.48%);
+}
 .overlay {
   background: linear-gradient(
     180deg,
