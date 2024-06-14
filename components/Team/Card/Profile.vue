@@ -7,7 +7,7 @@
         :class="{ 'pointer-events-none !px-0 !pb-0': loading,'pointer-events-none': isDisabled }"
     >
       <h1
-          class="text-white text-sm md:text-xl leading-130 font-bold mt-auto mb-1 capitalize break-words"
+          class="text-white text-sm md:text-lg leading-130 font-bold mt-auto mb-1 capitalize break-words"
       >
         {{ full_name }}
       </h1>
