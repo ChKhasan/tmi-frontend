@@ -120,7 +120,7 @@
               />
               <BaseButton
                 class="w-full max-w-[320px] mx-auto sm:mx-0 sm:w-auto sm:self-start"
-                :text="$t('discover_it')"
+                :text="$t('more')"
                 size="large"
                 @click="
                   $router.push(

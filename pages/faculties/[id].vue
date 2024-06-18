@@ -103,7 +103,11 @@ Promise.allSettled([
                 :user="{...singleDetail.leader,short_desc: singleDetail?.short_desc}"
                 is-single
             />
-
+            <AboutCardLeadership
+                v-else
+                :user="{...singleDetail.leader,short_desc: singleDetail?.short_desc,full_name: singleDetail?.title}"
+                is-single
+            />
 
 <!--            <div v-if="employees.length > 0" class="flex flex-col justify-center space-y-6 py-2 md:mt-4 md:pl-5">-->
 <!--              <AboutCardLeadership-->

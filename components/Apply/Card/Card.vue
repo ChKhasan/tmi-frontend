@@ -21,7 +21,7 @@ defineEmits(['apply', 'getDataWithOneId'])
       {{ subtitle }}
     </p> -->
 
-    <div class="grid grid-cols-1 gap-6" :class="{ 'grid-cols-2': isLocal }">
+    <div class="grid grid-cols-1 gap-6" :class="{ 'grid-cols-1': isLocal }">
       <NuxtLink
         :to="isLocal ? '/apply/local' : 'apply/international'"
         class="block w-full"
@@ -35,14 +35,14 @@ defineEmits(['apply', 'getDataWithOneId'])
           {{ $t('apply') }}
         </BaseButton>
       </NuxtLink>
-      <BaseButton
-        size="large"
-        v-if="isLocal"
-        class="w-full !py-[11px] backdrop-filter-[15px] transition-300 border border-gray-2 !bg-[#4825C2] hover:!bg-blue hover:border-blue-2"
-        @click="$emit('getDataWithOneId')"
-      >
-        <img src="/svg/oneid.svg" alt="One Id image" />
-      </BaseButton>
+<!--      <BaseButton-->
+<!--        size="large"-->
+<!--        v-if="isLocal"-->
+<!--        class="w-full !py-[11px] backdrop-filter-[15px] transition-300 border border-gray-2 !bg-[#4825C2] hover:!bg-blue hover:border-blue-2"-->
+<!--        @click="$emit('getDataWithOneId')"-->
+<!--      >-->
+<!--        <img src="/svg/oneid.svg" alt="One Id image" />-->
+<!--      </BaseButton>-->
     </div>
   </div>
 </template>

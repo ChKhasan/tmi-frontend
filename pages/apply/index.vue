@@ -25,7 +25,7 @@ const getOneLink = async () => {
     <BaseBreadcrumb :routes="breadcrumbRoutes" />
     <CommonSectionWrapper class="pt-8" :title="t('apply')">
       <template #default>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!--          <ApplyCard-->
 <!--            :title="t('international_app')"-->
 <!--            :subtitle="t('international_app_subtitle')"-->
