@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/tailwind.css', '~/assets/icomoon/style.css'],
+  plugins: ['~/plugins/facebook-script.js'],
   modules: ['@nuxtjs/tailwindcss', // 'nuxt-swiper',
   [
     '@pinia/nuxt',

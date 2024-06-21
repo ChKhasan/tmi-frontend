@@ -8,6 +8,7 @@ interface Props {
 defineProps<Props>()
 
 defineEmits(['apply', 'getDataWithOneId'])
+
 </script>
 
 <template>

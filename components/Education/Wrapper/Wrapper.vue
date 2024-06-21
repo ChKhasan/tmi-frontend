@@ -68,14 +68,14 @@ watch(
 <!--          <i class="icon-download text-lg !text-white group-hover:!text-dark" />-->
 <!--        </BaseButton>-->
 
-        <NuxtLink to="/apply">
+        <a href="https://register.timeedu.uz/">
           <BaseButton size="large" class="w-full sm:w-[192px]">
             <span>
               {{ $t('apply') }}
             </span>
             <i class="icon-file text-lg" />
           </BaseButton>
-        </NuxtLink>
+        </a>
       </div>
 
       <!--    overlay -->

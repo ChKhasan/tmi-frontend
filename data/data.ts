@@ -716,10 +716,7 @@ export const educationWrapperData = (
   return [
     {
       title: t('period_education'),
-      value:
-        period_education > 1
-          ? `${period_education} ${t('years')}`
-          : `${period_education} ${t('year')}`,
+      value:`${period_education} ${t('years')}`,
     },
     {
       title: t('language'),

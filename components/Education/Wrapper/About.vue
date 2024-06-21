@@ -29,14 +29,14 @@ const downloadBrochure = () => {
       <div
         class="bg-white p-5 flex items-center justify-center flex-col space-y-4"
       >
-        <NuxtLink to="/apply" class="block w-full">
+        <a href="https://register.timeedu.uz/" class="block w-full">
           <BaseButton size="large" class="w-full">
             <span>
               {{ $t('apply') }}
             </span>
             <i class="icon-file text-lg" />
           </BaseButton>
-        </NuxtLink>
+        </a>
 
 <!--        <BaseButton-->
 <!--          @click="downloadBrochure"-->

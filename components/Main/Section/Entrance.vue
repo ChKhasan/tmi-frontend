@@ -75,7 +75,7 @@
           class="w-full"
           :text="$t('apply')"
           size="large"
-          @click="$router.push('/apply')"
+          @click="navigateToSite"
         />
       </div>
 
@@ -108,7 +108,9 @@ const thumbsSwiper = ref(null)
 const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper
 }
-
+function navigateToSite() {
+  window.location.href = 'https://register.timeedu.uz/';
+}
 const settings = {
   modules: [Thumbs, Navigation, Pagination],
   pagination: {

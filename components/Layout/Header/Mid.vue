@@ -57,6 +57,9 @@ watch(
 const goToPage = (url: string) => {
   if (url?.length) router.push(url)
 }
+function navigateToSite() {
+  window.location.href = 'https://register.timeedu.uz/';
+}
 </script>
 
 <template>
@@ -159,7 +162,7 @@ const goToPage = (url: string) => {
             :text="$t('apply')"
             :variant="isTransparent ? 'secondary' : 'primary'"
             size="large"
-            @click="$router.push('/apply')"
+            @click="navigateToSite"
         />
       </div>
       <LayoutHeaderLangSwitcher v-bind="{ isTransparent }" class="md:hidden" />

@@ -37,6 +37,9 @@ interface Props {
   isFullMenu?: boolean
 }
 defineProps<Props>()
+function navigateToSite() {
+  window.location.href = 'https://register.timeedu.uz/';
+}
 </script>
 
 <template>
@@ -58,7 +61,7 @@ defineProps<Props>()
           class="block w-full mt-4"
           :text="$t('apply')"
           size="large"
-          @click="$router.push('/apply')"
+          @click="navigateToSite"
         />
       </div>
       <div class="flex flex-col my-7 relative z-0">
