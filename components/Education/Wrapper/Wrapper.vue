@@ -129,7 +129,7 @@ watch(
 .bachelor-header {
   position: relative;
   width: 100%;
-  background: url('/images/education/bg.png') no-repeat center center;
+  background: url('/images/bg-margee.png') no-repeat center center;
   background-size: cover;
 }
 </style>
