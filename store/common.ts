@@ -121,6 +121,7 @@ export const useCommonStore = defineStore('common', {
       search?: string
       limit?: number
       offset?: number
+      is_professor?: boolean
     }): Promise<IResponse<IEmployment>> {
       return new Promise((resolve, reject) => {
         useApi()

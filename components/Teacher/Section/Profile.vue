@@ -14,7 +14,7 @@ const store = useCommonStore()
 // fetch
 
 const fetchTeachers = async () => {
-  await store.getEmployment()
+  await store.getEmployment({is_professor: true})
 }
 
 fetchTeachers()
