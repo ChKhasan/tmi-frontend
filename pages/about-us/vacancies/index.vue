@@ -34,12 +34,12 @@ const breadcrumbRoutes = computed(() => [
 ])
 
 const params = reactive({
-  limit: 3,
+  limit: 4,
   offset: 0,
 })
 
 function loadMore(offset: number) {
-  params.offset += offset
+  params.offset += 4
   aboutStore.fetchVacancies(params)
 }
 
