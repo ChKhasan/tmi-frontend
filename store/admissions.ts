@@ -84,7 +84,7 @@ export const useAdmissionStore = defineStore('admissions', {
         this.directionListLoading = true
         useApi()
           .$get(`education/DirectionList/`, {
-            params: { education_type__slug: slug },
+            params: { education_type__slug: slug, limit: 999 },
           })
           .then((data: any) => {
             console.log(data)
