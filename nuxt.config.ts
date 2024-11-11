@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
+
   app: {
     pageTransition: { name: 'page-change', mode: 'out-in' },
     head: {
@@ -14,8 +15,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ['~/assets/tailwind.css', '~/assets/icomoon/style.css'],
   plugins: ['~/plugins/facebook-script.client.js'],
+
   modules: ['@nuxtjs/tailwindcss', // 'nuxt-swiper',
   [
     '@pinia/nuxt',
@@ -27,17 +30,23 @@ export default defineNuxtConfig({
       ],
     },
   ], '@nuxt/image', 'nuxt-swiper'],
+
   nitro: {
     serveStatic: true,
   },
+
   build: {
     transpile: ['vue-toastification'],
   },
+
   devServerHandlers: [],
+
   runtimeConfig: {
     public: {
       baseURL: 'localhost',
     },
   },
+
   devtools: { enabled: true },
+  compatibilityDate: '2024-10-29',
 })
